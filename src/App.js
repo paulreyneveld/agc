@@ -1,11 +1,10 @@
 import React from 'react'
-import Nav from './components/Nav'
+import Navigation from './components/Navigation'
 
 const App = () => {
   return (
     <>
-    <h1>Hello World</h1>
-    <Nav />
+    <Navigation />
     </>
   )
 }
