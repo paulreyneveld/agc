@@ -3,10 +3,14 @@ import Container from 'react-bootstrap/Container'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 
+const styles = {
+    paddingLeft: "5em",
+    textAlight: "center"
+}
 const Navigation = () => {
     return (
     <Container>
-    <Navbar fixed="top" bg="light" expand="lg">
+    <Navbar style={styles} fixed="top" bg="light" expand="lg">
         <Navbar.Brand href="#home">Alien Girl Cult</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
