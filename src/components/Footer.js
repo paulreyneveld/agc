@@ -1,8 +1,11 @@
 import React from 'react'
+import Container from 'react-bootstrap/Container'
 
 const Footer  = () => {
     return (
-        <h4>Footer</h4>
+        <Container>
+            <h4>Footer</h4>
+        </Container>
     )
 }
 
