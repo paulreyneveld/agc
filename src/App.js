@@ -10,6 +10,8 @@ import Blog from './components/Blog'
 import About from './components/About'
 import Gallery from './components/Gallery'
 import Footer from './components/Footer'
+import css from './custom.css'
+
 
 const App = () => {
   return (

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import Container from 'react-bootstrap/Container'
 
-const TestBody = () => {
+const Home = () => {
 
     const [lorem, setLorem] = useState('')
 
@@ -16,7 +17,11 @@ const TestBody = () => {
 
     console.log(lorem.data)
     
-    return (<p>{lorem.data}</p>)
+    return (
+        <Container>
+        <p>{lorem.data}</p>
+        </Container>
+    )
 }
 
-export default TestBody
+export default Home
