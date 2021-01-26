@@ -1,22 +1,30 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Container from 'react-bootstrap/Container'
-import axios from 'axios'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import Image from 'react-bootstrap/Image'
 
 const Gallery = () => {
-
-    const [dummyImages, setDummyImages] = useState([])
-
-    useEffect(() => {
-        axios.get('https://picsum.photos/v2/list?page=1&limit=30/200/300')
-            .then(response => setDummyImages(response.data))
-    }, [])
-    console.log(dummyImages)
 
     return (
         <>
         <Container>
-        <h3>Anyone here, hello</h3>
-        <p>Somebody, anybody?</p>
+        <Row>
+            <Col xs={6} md={4}>
+            <Image src="https://picsum.photos/300/200?random=1" thumbnail />
+            </Col>
+            <Col xs={6} md={4}>
+            <Image src="https://picsum.photos/300/200?random=2" thumbnail />
+            </Col>
+            <Col xs={6} md={4}>
+            <Image src="https://picsum.photos/300/200?random=3" thumbnail />
+            </Col>
+        </Row>
+        <Row>
+            <Col xs={6} md={4}>
+            <Image src="https://picsum.photos/300/200?random=4" thumbnail />
+            </Col>
+        </Row>
         </Container>
         </>
     )
