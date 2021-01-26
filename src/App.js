@@ -5,7 +5,8 @@ import {
   Route
 } from 'react-router-dom'
 import Navigation from './components/Navigation'
-import TestBody from './components/TestBody'
+import Home from './components/Home'
+import Blog from './components/Blog'
 import Gallery from './components/Gallery'
 import Footer from './components/Footer'
 
@@ -16,7 +17,7 @@ const App = () => {
       <Navigation />
         <Switch>
           <Route path="/blog">
-
+            <Blog />
           </Route>
           <Route path="/about">
 
@@ -25,7 +26,7 @@ const App = () => {
             <Gallery />
           </Route>
           <Route path="/">
-            <TestBody />
+            <Home />
           </Route>
         </Switch>
       <Footer />
