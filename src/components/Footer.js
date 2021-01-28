@@ -1,24 +1,19 @@
 import React from 'react'
 import Container from 'react-bootstrap/Container'
 import Card from 'react-bootstrap/Card'
+import { Link } from 'react-router-dom'
 
 const Footer  = () => {
     return (
+        <footer>
         <Card>
-        <Card.Header>Quote</Card.Header>
+        <Card.Header>Alien Girl Cult</Card.Header>
         <Card.Body>
-            <blockquote className="blockquote mb-0">
-            <p>
-                {' '}
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
-                erat a ante.{' '}
-            </p>
-            <footer className="blockquote-footer">
-                Someone famous in <cite title="Source Title">Source Title</cite>
-            </footer>
-            </blockquote>
+            Copyright Alien Girl Cult 2021
         </Card.Body>
+        <Card.Link><Link to="/gallery">Card Link</Link></Card.Link>
         </Card>
+        </footer>
     )
 }
 
