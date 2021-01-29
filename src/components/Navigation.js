@@ -12,7 +12,7 @@ const Navigation = () => {
     return (
     <Container>
     <Navbar style={styles} fixed="top" bg="light" expand="lg">
-        <Navbar.Brand href="#home">Alien Girl Cult</Navbar.Brand>
+        <Navbar.Brand href="#home">Alien Gvrl Cvlt</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
