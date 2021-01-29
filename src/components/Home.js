@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 const Home = () => {
 
@@ -19,8 +21,17 @@ const Home = () => {
     
     return (
         <Container>
+        <h1>Home</h1>
+        <Row>
+        <Col xs={1}>
+
+        </Col>
+        <Col xs={8}>
         <p>{lorem.data}</p>
+        </Col>
+        </Row>
         </Container>
+        
     )
 }
 

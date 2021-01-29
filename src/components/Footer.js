@@ -6,15 +6,19 @@ import { Link } from 'react-router-dom'
 const Footer  = () => {
     return (
         <footer>
-        <Card>
-        <Card.Header>Alien Girl Cult</Card.Header>
-        <Card.Body>
-            Copyright Alien Girl Cult 2021
-        </Card.Body>
         <Container>
-        <Card.Link><Link to="/gallery">Card Link</Link></Card.Link>
-        </Container>
+        <Card>
+        <Card.Body>
+            Copyright Alien Girl Cult 2021 <br />
+            <Card.Link><Link to="/home">Home</Link></Card.Link>
+            <Card.Link><Link to="/blog">Blog</Link></Card.Link>
+            <Card.Link><Link to="/about">About</Link></Card.Link>
+            <Card.Link><Link to="/gallery">Gallery</Link></Card.Link>
+
+        </Card.Body>
+        
         </Card>
+        </Container>
         </footer>
     )
 }
