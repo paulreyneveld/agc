@@ -11,7 +11,9 @@ const Footer  = () => {
         <Card.Body>
             Copyright Alien Girl Cult 2021
         </Card.Body>
+        <Container>
         <Card.Link><Link to="/gallery">Card Link</Link></Card.Link>
+        </Container>
         </Card>
         </footer>
     )

@@ -13,7 +13,7 @@ const Gallery = () => {
             <Col xs={6} md={4}>
             <Image src="https://picsum.photos/300/200?random=1" thumbnail />
             </Col>
-            <Col xs={6} md={8}>
+            <Col xs={6} md={4}>
             <Image src="https://picsum.photos/300/200?random=2" thumbnail />
             </Col>
             <Col xs={6} md={4}>
