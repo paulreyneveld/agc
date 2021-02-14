@@ -8,6 +8,7 @@ const styles = {
     paddingLeft: "5em",
     textAlight: "center"
 }
+
 const Navigation = () => {
     return (
     <Container>
