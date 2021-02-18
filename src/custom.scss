@@ -1,7 +1,8 @@
-$navbar-padding-x: 10em;
 $headings-font-family: Garamond;
-$bg-light: #999;
+$body-bg: #FFEABE;
 $primary: #F2BFBF;
-$bg-color: #999;
-$light: #FFEABE;
+$bg-color: #FFEABE;
+$link-hover-color: darken($primary, 15%);
+$custom-select-font-family: Garamond;
+
 @import '~bootstrap/scss/bootstrap.scss';

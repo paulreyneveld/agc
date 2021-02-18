@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 const Footer  = () => {
     return (
         <footer>
-        <Container>
+        <Container style={{backgroundColor: "F2BFBF"}}>
         <Card>
         <Card.Body>
             Copyright Alien Girl Cult 2021 <br />
