@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
 
 const Home = () => {
 
     const [lorem, setLorem] = useState('')
 
     const obtainLorem = () => {
-        axios.get('https://baconipsum.com/api/?type=all-meat&paras=20&start-with-lorem=1')
+        axios.get('https://baconipsum.com/api/?type=meat-and-filler&paras=5&format=text')
             .then(response => setLorem(response))
             .catch(error => console.log(error))
     }
