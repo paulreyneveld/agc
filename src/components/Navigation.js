@@ -6,7 +6,7 @@ import Nav from 'react-bootstrap/Nav'
 
 const Navigation = () => {
     return (
-    <Container>
+    <Nav>
     <Navbar fixed="top" bg="light" expand="lg">
         <Navbar.Brand href="#home">Alien Gvrl Cvlt</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -19,7 +19,7 @@ const Navigation = () => {
             </Nav>
         </Navbar.Collapse>
     </Navbar>
-    </Container>
+    </Nav>
     )
 }
 

@@ -22,14 +22,7 @@ const Home = () => {
     return (
         <Container>
         <h1>Home</h1>
-        <Row>
-        <Col xs={1}>
-
-        </Col>
-        <Col xs={8}>
         <p>{lorem.data}</p>
-        </Col>
-        </Row>
         </Container>
         
     )
