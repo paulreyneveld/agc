@@ -9,6 +9,7 @@ import Home from './components/Home'
 import Blog from './components/Blog'
 import About from './components/About'
 import Gallery from './components/Gallery'
+import Login from './components/Login'
 import Footer from './components/Footer'
 import css from './custom.css'
 
@@ -27,6 +28,9 @@ const App = () => {
           </Route>
           <Route path="/gallery">
             <Gallery />
+          </Route>
+          <Route path="/login">
+            <Login />
           </Route>
           <Route path="/">
             <Home />
