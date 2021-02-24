@@ -1,31 +1,6 @@
 import React, { useState } from 'react'
-import loginService from '../services/login'
 
-const Login = () => {
-
-    const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
-    const [user, setUser] = useState(null)
-
-    const handleLogin = async (event) => {
-        event.preventDefault()
-        try {
-            const user = await loginService.login({
-              username, password,
-            })
-            window.localStorage.setItem(
-                'loggedAdmin', JSON.stringify(user)
-            )
-            setUser(user)
-            setUsername('')
-            setPassword('')
-          } catch (exception) {
-            // setErrorMessage('Wrong credentials')
-            // setTimeout(() => {
-            //   setErrorMessage(null)
-            // }, 5000)
-          }
-    }
+const Login = ({ handleLogin, setUsername, setPassword, username, password }) => {
 
     return (
         <>
