@@ -18,7 +18,7 @@ const Navigation = ({ handleLogout }) => {
     return (
     <Nav>
     <Navbar fixed="top" bg="light" expand="lg">
-        <Navbar.Brand >Alien Gvrl Cvlt</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/">Alien Gvrl Cvlt</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
