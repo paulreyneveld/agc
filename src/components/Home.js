@@ -13,10 +13,7 @@ const Home = () => {
     }
 
     useEffect(() => obtainLorem(), [])
-
-
-    console.log(lorem.data)
-    
+        
     return (
         <Container>
         <h1>Home</h1>

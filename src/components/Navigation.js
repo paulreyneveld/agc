@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 
-const Navigation = () => {
+const Navigation = ({ handleLogout }) => {
     return (
     <Nav>
     <Navbar fixed="top" bg="light" expand="lg">
@@ -18,7 +18,9 @@ const Navigation = () => {
             <Nav.Link><Link to="/gallery">Gallery</Link></Nav.Link>
             </Nav>
         </Navbar.Collapse>
+        <button onClick={handleLogout}>Logout</button>
     </Navbar>
+    
     </Nav>
     )
 }
