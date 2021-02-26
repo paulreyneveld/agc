@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { initializeUser } from '../reducers/loginReducer'
+import loginService from '../services/login'
 
 const Login = () => {
 
@@ -20,7 +21,8 @@ const Login = () => {
         window.localStorage.setItem(
           'loggedBlogappUser', JSON.stringify(user)
         )
-        blogService.setToken(user.token)
+        console.log(user)
+        // blogService.setToken(user.token)
         dispatch(initializeUser(user))
       } catch (exception) {
         console.log(exception)
