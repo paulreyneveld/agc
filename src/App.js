@@ -5,7 +5,7 @@ import {
   Route
 } from 'react-router-dom'
 import { initializeUser, clearUser } from './reducers/loginReducer'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import Navigation from './components/Navigation'
 import Home from './components/Home'
 import Blog from './components/Blog'
@@ -31,6 +31,12 @@ const App = () => {
     checkLoggedIn()
   }, [dispatch])
 
+  const userInfo = useSelector(state => {
+    return state.user
+  })  
+
+  console.log(userInfo)
+  
   const handleLogout = () => {
     window.localStorage.removeItem('loggedBlogappUser')
     dispatch(clearUser(null))
