@@ -13,34 +13,8 @@ import About from './components/About'
 import Gallery from './components/Gallery'
 import Login from './components/Login'
 import Footer from './components/Footer'
-import css from './custom.css'
-
 
 const App = () => {
-
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
-  const [errorMessage, setErrorMessage] = useState('')
-  const [user, setUser] = useState(null)
-
-  const handleLogin = async (event) => {
-    event.preventDefault()
-    try {
-        const user = await loginService.login({
-          username, password,
-        })
-        window.localStorage.setItem(
-            'loggedAdmin', JSON.stringify(user)
-        )
-        setUser(user)
-        setUsername('')
-        setPassword('')
-        console.log('Login success')
-      } catch (exception) {
-        setErrorMessage('Wrong credentials')
-        console.log('Login failed')
-      }
-  }   
 
   return (
     <>
@@ -57,13 +31,7 @@ const App = () => {
             <Gallery />
           </Route>
           <Route path="/login">
-            <Login 
-              handleLogin={handleLogin}
-              setUsername={setUsername}
-              setPassword={setPassword}
-              username={username}
-              password={password}
-             />
+            <Login />
           </Route>
           <Route path="/">
             <Home />

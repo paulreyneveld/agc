@@ -6,9 +6,9 @@ import './custom.scss';
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 import { createStore, applyMiddleware } from 'redux'
-import userReducer from './reducers/userReducer';
+import loginReducer from './reducers/loginReducer';
 
-const store = createStore(userReducer, applyMiddleware(thunk))
+const store = createStore(loginReducer, applyMiddleware(thunk))
 
 ReactDOM.render(
   <React.StrictMode>

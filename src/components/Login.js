@@ -1,6 +1,31 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { initializeUser } from '../reducers/loginReducer'
 
-const Login = ({ handleLogin, setUsername, setPassword, username, password }) => {
+const Login = () => {
+
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+
+    const dispatch = useDispatch()
+
+    const handleLogin = async (event) => {
+      event.preventDefault()
+
+      try {
+        const user = await loginService.login({
+          username, password,
+        })
+
+        window.localStorage.setItem(
+          'loggedBlogappUser', JSON.stringify(user)
+        )
+        blogService.setToken(user.token)
+        dispatch(initializeUser(user))
+      } catch (exception) {
+        console.log(exception)
+      }
+    }
 
     return (
         <>
