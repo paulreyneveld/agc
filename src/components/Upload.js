@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { beginAddPhoto } from '../reducers/photosReducer'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
@@ -19,7 +20,7 @@ const Upload = () => {
     const handleFormSubmit = (event) => {
         event.preventDefault()
         if (photo) {
-            // dispatch(beginAddPhoto(photo))
+            dispatch(beginAddPhoto(photo))
             setIsSubmitted(true)
         }
     }
@@ -27,7 +28,7 @@ const Upload = () => {
     return (
     <Container>
         <Form
-        // onSubmit={handleFormSubmit}
+        onSubmit={handleFormSubmit}
         method="post"
         encType="multipart/form-data"
         className="upload-form"
