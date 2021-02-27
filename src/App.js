@@ -13,6 +13,7 @@ import About from './components/About'
 import Gallery from './components/Gallery'
 import Login from './components/Login'
 import Footer from './components/Footer'
+import Upload from './components/Upload'
 
 const App = () => {
 
@@ -60,6 +61,9 @@ const App = () => {
           </Route>
           <Route path="/login">
             <Login />
+          </Route>
+          <Route path="/upload">
+            <Upload />
           </Route>
           <Route path="/">
             <Home />
