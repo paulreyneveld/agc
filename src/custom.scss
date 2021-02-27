@@ -5,4 +5,8 @@ $primary: #F2BFBF;
 $link-hover-color: darken($primary, 15%);
 $font-family-base: Garamond;
 
+body {
+    padding-top: 65px;
+}
+
 @import '~bootstrap/scss/bootstrap.scss';

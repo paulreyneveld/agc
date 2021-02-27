@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { initializeUser } from '../reducers/loginReducer'
 import loginService from '../services/login'
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
+import Container from 'react-bootstrap/Container'
 
 const Login = () => {
 
@@ -30,30 +33,32 @@ const Login = () => {
     }
 
     return (
-        <>
-        <h1>Hello from login</h1>
-        <form onSubmit={handleLogin}>
-        <div>
-          username
-            <input
-            type="text"
+      <Container>
+      <div className="Login">
+      <Form onSubmit={handleLogin}>
+        <Form.Group size="lg" controlId="username">
+          <Form.Label>Email</Form.Label>
+          <Form.Control
+            autoFocus
+            type="username"
             value={username}
-            name="Username"
             onChange={({ target }) => setUsername(target.value)}
           />
-        </div>
-        <div>
-          password
-            <input
+        </Form.Group>
+        <Form.Group size="lg" controlId="password">
+          <Form.Label>Password</Form.Label>
+          <Form.Control
             type="password"
             value={password}
-            name="Password"
-            onChange={({ target }) => setPassword(target.value)}
+            onChange={({ target}) => setPassword(target.value)}
           />
-        </div>
-        <button type="submit">login</button>
-      </form>
-        </>
+        </Form.Group>
+        <Button block size="lg" type="submit">
+          Login
+        </Button>
+      </Form>
+    </div>
+    </Container>
     )
 }
 
