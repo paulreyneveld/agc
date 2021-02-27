@@ -33,7 +33,7 @@ const Login = () => {
     }
 
     return (
-      <Container>
+      <Container col={3}>
       <div className="Login">
       <Form onSubmit={handleLogin}>
         <Form.Group size="lg" controlId="username">
