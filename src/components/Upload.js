@@ -44,6 +44,7 @@ const Upload = () => {
           Upload
         </Button>
       </Form>
+      {isSubmitted ? <p>submitted</p> : <p>not submitted</p>}
     </Container>
     )
 }
