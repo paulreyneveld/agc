@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import axios from 'axios'
-import { BASE_API_URL } from '../utils/constants'
 import Container from 'react-bootstrap/esm/Container'
 import Photo from './Photo'
 import { startLoadPhotos } from '../reducers/photosReducer'
@@ -12,12 +10,13 @@ const TestGallery = () => {
     
     const [isLoading, setIsLoading] = useState(false);
 
+    const photos = useSelector(state => state.photos)
+    const errors = useSelector(state => state.errors)
+
     useEffect(() => {
         setIsLoading(true);
         dispatch(startLoadPhotos());
-    }, []);
-
-    const photos = useSelector(state => console.log(state.photos))
+    }, [dispatch]);
 
     useEffect(() => {
         if (photos.length > 0) {

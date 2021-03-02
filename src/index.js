@@ -8,13 +8,15 @@ import thunk from 'redux-thunk'
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import loginReducer from './reducers/loginReducer'
 import photosReducer from './reducers/photosReducer'
+import errorsReducer from './reducers/errorReducer';
 
 // const store = createStore(loginReducer, applyMiddleware(thunk))
 
 const store = createStore(
   combineReducers({
     login: loginReducer,
-    photos: photosReducer
+    photos: photosReducer,
+    errors: errorsReducer
   }),
   applyMiddleware(thunk)
 )
