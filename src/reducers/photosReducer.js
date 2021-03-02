@@ -30,6 +30,7 @@ export const startLoadPhotos = () => {
   return async (dispatch) => {
     try {
       const photos = await axios.get(`${BASE_API_URL}/photos`);
+      console.log(photos)
       dispatch(loadPhotos(photos.data));
     } catch (error) {
       console.log(error)
