@@ -1,51 +1,44 @@
-import React from 'react'
+import React, { useState, useEffect} from 'react'
 import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import Image from 'react-bootstrap/Image'
+import ImageGallery from 'react-image-gallery'
+import { useDispatch, useSelector } from 'react-redux'
+import { startLoadPhotos } from '../reducers/photosReducer'
+import { BASE_API_URL } from '../utils/constants'
 
-const styles = {
-    paddingTop: 10
-}
 const Gallery = () => {
 
-    return (
-        <>
-        <Container>
-        <Row >
-            <Col xs={6} md={4} style={styles}>
-            <Image src="https://picsum.photos/300/200?random=1" thumbnail />
-            </Col>
-            <Col xs={6} md={4} style={styles}>
-            <Image src="https://picsum.photos/300/200?random=2" thumbnail />
-            </Col>
-            <Col xs={6} md={4} style={styles}>
-            <Image src="https://picsum.photos/300/200?random=3" thumbnail />
-            </Col>
-            <Col xs={6} md={4} style={styles}>
-            <Image src="https://picsum.photos/300/200?random=4" thumbnail />
-            </Col>
-            <Col xs={6} md={4} style={styles}>
-            <Image src="https://picsum.photos/300/200?random=5" thumbnail />
-            </Col>
-            <Col xs={6} md={4} style={styles}>
-            <Image src="https://picsum.photos/300/200?random=6" thumbnail />
-            </Col>
-            <Col xs={6} md={4} style={styles}>
-            <Image src="https://picsum.photos/300/200?random=7" thumbnail />
-            </Col>
-            <Col xs={6} md={4} style={styles}>
-            <Image src="https://picsum.photos/300/200?random=8" thumbnail />
-            </Col>
-            <Col xs={6} md={4} style={styles}>
-            <Image src="https://picsum.photos/300/200?random=9" thumbnail />
-            </Col>
-        </Row>
-        <Row>
+    const dispatch = useDispatch()
+    
+    const [isLoading, setIsLoading] = useState(false)
 
-        </Row>
+    const photos = useSelector(state => state.photos)
+    const errors = useSelector(state => state.errors)
+
+    const restructuredImages = photos.map(photo => { 
+        return {
+            original: `${BASE_API_URL}/photos/${photo._id}`
+        }
+    })
+
+    console.log(restructuredImages)
+
+    useEffect(() => {
+        setIsLoading(true);
+        dispatch(startLoadPhotos());
+    }, [dispatch])
+
+    useEffect(() => {
+        if (photos.length > 0) {
+        setIsLoading(false);
+        }
+    }, [photos])
+
+    console.log(photos)
+    return (
+        <Container>
+            <p>hello</p>
+            <ImageGallery items={restructuredImages} />
         </Container>
-        </>
     )
 }
 

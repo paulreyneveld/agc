@@ -15,7 +15,6 @@ import Login from './components/Login'
 import Footer from './components/Footer'
 import Upload from './components/Upload'
 import TestGallery from './components/TestGallery'
-import ImageGallery from './components/ImageGallery'
 
 const App = () => {
 
@@ -69,9 +68,6 @@ const App = () => {
           </Route>
           <Route path="/testgallery">
             <TestGallery />
-          </Route>
-          <Route path="/imagegallery">
-            <ImageGallery />
           </Route>
           <Route path="/">
             <Home />
