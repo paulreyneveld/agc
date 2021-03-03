@@ -9,6 +9,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux'
 import loginReducer from './reducers/loginReducer'
 import photosReducer from './reducers/photosReducer'
 import errorsReducer from './reducers/errorReducer';
+import blogReducer from './reducers/blogReducer';
 
 // const store = createStore(loginReducer, applyMiddleware(thunk))
 
@@ -16,7 +17,8 @@ const store = createStore(
   combineReducers({
     login: loginReducer,
     photos: photosReducer,
-    errors: errorsReducer
+    errors: errorsReducer,
+    blog: blogReducer
   }),
   applyMiddleware(thunk)
 )
