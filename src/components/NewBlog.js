@@ -15,7 +15,7 @@ const NewBlog = () => {
 
                 <Form.Group controlId="formBasicPassword">
                     <Form.Label>Blog</Form.Label>
-                    <Form.Control type="textarea" placeholder="Type blog here. . ." />              
+                    <Form.Control as="textarea" placeholder="Type blog here. . ." rows={10} />              
                 </Form.Group>
                 <Button variant="primary" type="submit">
                     Submit
