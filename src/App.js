@@ -13,7 +13,7 @@ import About from './components/About'
 import Gallery from './components/Gallery'
 import Login from './components/Login'
 import Footer from './components/Footer'
-import Upload from './components/Upload'
+import Upload from './components/UploadPhoto'
 import TestGallery from './components/TestGallery'
 import NewBlog from './components/NewBlog'
 
