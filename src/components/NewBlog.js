@@ -1,7 +1,7 @@
 import React from 'react'
 import Container from 'react-bootstrap/Container'
 
-const MakeBlog = () => {
+const NewBlog = () => {
     return (
         <Container>
             <h1>Hello</h1>
@@ -9,4 +9,4 @@ const MakeBlog = () => {
     )
 }
 
-export default MakeBlog
+export default NewBlog
