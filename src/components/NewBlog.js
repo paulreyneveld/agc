@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
+import { addNewBlog } from '../reducers/blogReducer'
 import Container from 'react-bootstrap/Container'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
@@ -14,6 +15,12 @@ const NewBlog = () => {
     const createNewBlog = (event) => {
         event.preventDefault()
         console.log('hello')
+        const newBlog = {
+            title,
+            content
+        }
+        console.log(newBlog)
+        dispatch(addNewBlog(newBlog))
         // Okay, now I need to take the state and send it to an action to interact with the backend. 
 
     }
