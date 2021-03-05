@@ -12,11 +12,19 @@ const Blog = () => {
         dispatch(initializeBlogs())
     }, [dispatch] )
 
-    const blogs = useSelector(state => state.blog)
+    const blogs = useSelector(state => state.blog.data)
     console.log(blogs)
     return (
         <Container>
             <h1>Blog</h1>
+            {blogs && blogs.map(blog => {
+                return (
+                    <>
+                    <h3 key={blog.id}>{blog.title}</h3>
+                    <ReactMarkdown source={blog.content} />
+                    </>
+                )
+            })}
         </Container>
     )
 }
