@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import Container from 'react-bootstrap/Container'
-import { initializeBlogs } from '../reducers/blogReducer'
+import { initializeBlogs, deleteBlog } from '../reducers/blogReducer'
 import { useDispatch, useSelector } from 'react-redux'
 import ReactMarkdown from 'react-markdown'
 
@@ -13,7 +13,7 @@ const Blog = () => {
     }, [dispatch] )
 
     const blogs = useSelector(state => state.blog.data)
-    console.log(blogs)
+
     return (
         <Container>
             <h1>Blog</h1>

@@ -9,6 +9,8 @@ const blogReducer = (state = [], action) => {
         case "NEW_BLOG":
             console.log(state)
             return state.concat(action.data.blog)
+        case "DELETE_BLOG":
+            return state.filter(blog => blog.id !== state.id)
         default: 
             return state
     }
@@ -32,6 +34,21 @@ export const addNewBlog = (newBlog) => {
             type: 'NEW_BLOG',
             data: blog
         })
+    }
+}
+
+export const deleteBlog = (id) => {
+    return async dispatch => {
+        try {
+        await axios.delete(`${BASE_API_URL}/blog`)
+        dispatch({
+            type: 'DELETE_BLOG',
+            data: id
+        })
+        }
+        catch (error) {
+            console.log(error)
+        }
     }
 }
 
