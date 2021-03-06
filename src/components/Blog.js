@@ -13,7 +13,7 @@ const Blog = (props) => {
         dispatch(initializeBlogs())
       }, [dispatch] )
 
-    const blogs = useSelector(state => state.blog.data)
+    const blogs = useSelector(state => state.blog)
 
     const removeBlog = (id) => {
         dispatch(deleteBlog(id))
