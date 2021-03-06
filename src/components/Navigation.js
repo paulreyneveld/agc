@@ -6,9 +6,9 @@ import Button from 'react-bootstrap/Button'
 import { useSelector } from 'react-redux'
 
 const Navigation = ({ handleLogout }) => {
-
-    const user = useSelector(state => state.user)
-
+    
+    const user = useSelector(state => state.login.user)
+    console.log(user)
     const logoutButtonRelevant = () => {
         if (user) {
             return <Button onClick={handleLogout}>Logout</Button>
