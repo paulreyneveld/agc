@@ -24,8 +24,6 @@ const Login = () => {
         window.localStorage.setItem(
           'loggedBlogappUser', JSON.stringify(user)
         )
-        console.log(user)
-        // blogService.setToken(user.token)
         dispatch(initializeUser(user))
       } catch (exception) {
         console.log(exception)
