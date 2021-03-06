@@ -14,7 +14,6 @@ const NewBlog = (props) => {
 
     const createNewBlog = (event) => {
         event.preventDefault()
-        console.log('hello')
         const newBlog = {
             title,
             content
@@ -22,8 +21,6 @@ const NewBlog = (props) => {
         console.log(newBlog)
         dispatch(addNewBlog(newBlog))
         props.history.push('/blog')
-        // Okay, now I need to take the state and send it to an action to interact with the backend. 
-
     }
 
     return (

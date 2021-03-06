@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import ReactMarkdown from 'react-markdown'
 import Button from 'react-bootstrap/Button'
 
-const Blog = () => {
+const Blog = (props) => {
 
     const dispatch = useDispatch()
 
@@ -23,11 +23,11 @@ const Blog = () => {
             <h1>Blog</h1>
             {blogs && blogs.map(blog => {
                 return (
-                    <>
-                    <h3 key={blog.id}>{blog.title}</h3>
+                    <div key={blog.id}>
+                    <h3 >{blog.title}</h3>
                     <Button onClick={() => removeBlog(blog.id)}>Delete Post</Button>
                     <ReactMarkdown source={blog.content} />
-                    </>
+                    </div>
                 )
             })}
         </Container>
