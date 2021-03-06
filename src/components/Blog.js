@@ -18,6 +18,10 @@ const Blog = (props) => {
     const removeBlog = (id) => {
         dispatch(deleteBlog(id))
     }
+
+    const editBlog = (id) => {
+        dispatch(updateBlog(id))
+    }
     return (
         <Container>
             <h1>Blog</h1>
@@ -26,6 +30,7 @@ const Blog = (props) => {
                     <div key={blog.id}>
                     <h3 >{blog.title}</h3>
                     <Button onClick={() => removeBlog(blog.id)}>Delete Post</Button>
+                    <Button onClick={() => editBlog(blog.id)}>Edit</Button>
                     <ReactMarkdown source={blog.content} />
                     </div>
                 )

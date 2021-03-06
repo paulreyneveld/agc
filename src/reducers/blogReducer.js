@@ -49,4 +49,16 @@ export const deleteBlog = (id) => {
     }
 }
 
+// edit blog
+export const updateBlog = (id) => {
+    return async dispatch => {
+        try {
+            // await axios.put(`${BASE_API_URL}/blog/${id}`)
+        }
+        catch (error) {
+            console.log(error)
+        }
+    }
+}
+
 export default blogReducer
