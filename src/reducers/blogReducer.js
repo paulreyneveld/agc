@@ -1,5 +1,4 @@
 import axios from "axios"
-
 import { BASE_API_URL } from '../utils/constants'
 
 const blogReducer = (state = [], action) => {
@@ -8,7 +7,8 @@ const blogReducer = (state = [], action) => {
             return action.data
         case "NEW_BLOG":
             console.log(state)
-            return state.concat(action.data.blog)
+            console.log(typeof state)
+            return state.data.concat(action.data)
         case "DELETE_BLOG":
             return state.filter(blog => blog.id !== state.id)
         default: 
@@ -18,7 +18,6 @@ const blogReducer = (state = [], action) => {
 
 export const initializeBlogs = () => {
     return async dispatch => {
-        // const blogs = await blogService.getAll()
         const blogs = await axios.get(`${BASE_API_URL}/blog`)
         dispatch({
             type: 'GET_BLOGS',
@@ -40,7 +39,7 @@ export const addNewBlog = (newBlog) => {
 export const deleteBlog = (id) => {
     return async dispatch => {
         try {
-        await axios.delete(`${BASE_API_URL}/blog`)
+        await axios.delete(`${BASE_API_URL}/blog/${id}`)
         dispatch({
             type: 'DELETE_BLOG',
             data: id

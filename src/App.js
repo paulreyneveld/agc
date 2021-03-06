@@ -27,7 +27,6 @@ const App = () => {
       if (loggedUserJSON) { 
         const user = JSON.parse(loggedUserJSON)
         dispatch(initializeUser(user))
-        // blogService.setToken(user.token)
         console.log(user)
       }
     }
@@ -37,8 +36,6 @@ const App = () => {
   const userInfo = useSelector(state => {
     return state.user
   })  
-
-  console.log(userInfo)
   
   const handleLogout = () => {
     window.localStorage.removeItem('loggedBlogappUser')
@@ -70,9 +67,8 @@ const App = () => {
           <Route path="/testgallery">
             <TestGallery />
           </Route>
-          <Route path="/newblog">
-            <NewBlog />
-          </Route>
+          <Route exact path="/newblog" render={(props) => <NewBlog {...props} />}/>
+
           <Route path="/">
             <Home />
           </Route>

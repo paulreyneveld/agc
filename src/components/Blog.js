@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container'
 import { initializeBlogs, deleteBlog } from '../reducers/blogReducer'
 import { useDispatch, useSelector } from 'react-redux'
 import ReactMarkdown from 'react-markdown'
+import Button from 'react-bootstrap/Button'
 
 const Blog = () => {
 
@@ -10,10 +11,13 @@ const Blog = () => {
 
     useEffect(() => {
         dispatch(initializeBlogs())
-    }, [dispatch] )
+      }, [dispatch] )
 
     const blogs = useSelector(state => state.blog.data)
 
+    const removeBlog = (id) => {
+        dispatch(deleteBlog(id))
+    }
     return (
         <Container>
             <h1>Blog</h1>
@@ -21,6 +25,7 @@ const Blog = () => {
                 return (
                     <>
                     <h3 key={blog.id}>{blog.title}</h3>
+                    <Button onClick={() => removeBlog(blog.id)}>Delete Post</Button>
                     <ReactMarkdown source={blog.content} />
                     </>
                 )

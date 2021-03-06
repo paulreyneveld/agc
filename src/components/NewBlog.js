@@ -5,7 +5,7 @@ import Container from 'react-bootstrap/Container'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
-const NewBlog = () => {
+const NewBlog = (props) => {
 
     const dispatch = useDispatch()
 
@@ -21,6 +21,7 @@ const NewBlog = () => {
         }
         console.log(newBlog)
         dispatch(addNewBlog(newBlog))
+        props.history.push('/blog')
         // Okay, now I need to take the state and send it to an action to interact with the backend. 
 
     }
