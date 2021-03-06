@@ -58,9 +58,7 @@ const App = () => {
           <Route path="/gallery">
             <Gallery />
           </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
+          <Route path="/login"  render={(props) => <Login {...props} />}/>
           <Route path="/upload">
             <Upload />
           </Route>

@@ -6,7 +6,7 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 
-const Login = () => {
+const Login = (props) => {
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
@@ -25,6 +25,7 @@ const Login = () => {
           'loggedBlogappUser', JSON.stringify(user)
         )
         dispatch(initializeUser(user))
+        props.history.push('/')
       } catch (exception) {
         console.log(exception)
       }
