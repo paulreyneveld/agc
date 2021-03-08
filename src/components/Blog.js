@@ -37,8 +37,8 @@ const Blog = (props) => {
                 return (
                     <div key={blog.id} style={blogStyle}>
                     <h3 >{blog.title}</h3>
-                    <Button onClick={() => removeBlog(blog.id)}>Delete Post</Button>
-                    <Button onClick={() => editBlog(blog.id)}>Edit</Button>
+                    <Button variant="outline-primary" onClick={() => removeBlog(blog.id)}>Delete Post</Button>
+                    <Button variant="outline-primary" onClick={() => editBlog(blog.id)}>Edit</Button>
                     <ReactMarkdown source={blog.content} />
                     </div>
                 )

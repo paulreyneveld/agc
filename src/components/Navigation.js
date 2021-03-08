@@ -11,7 +11,7 @@ const Navigation = ({ handleLogout }) => {
     console.log(user)
     const logoutButtonRelevant = () => {
         if (user) {
-            return <Button onClick={handleLogout}>Logout</Button>
+            return <Button variant="outline-primary" onClick={handleLogout}>Logout</Button>
         }
     }
 
