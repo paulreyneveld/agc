@@ -25,7 +25,7 @@ const Blog = (props) => {
     return (
         <Container>
             <h1>Blog</h1>
-            {blogs && blogs.map(blog => {
+            {blogs && blogs.slice(0).reverse().map(blog => {
                 return (
                     <div key={blog.id}>
                     <h3 >{blog.title}</h3>
