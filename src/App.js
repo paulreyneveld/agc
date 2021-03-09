@@ -16,6 +16,7 @@ import Footer from './components/Footer'
 import Upload from './components/UploadPhoto'
 import TestGallery from './components/TestGallery'
 import NewBlog from './components/NewBlog'
+import PanelGallery from './components/PanelGallery'
 
 const App = () => {
 
@@ -65,8 +66,8 @@ const App = () => {
           <Route path="/testgallery">
             <TestGallery />
           </Route>
-          <Route exact path="/newblog" render={(props) => <NewBlog {...props} />}/>
-          <Route exact path="/panelgallery" render={() => <PanelGallery />}/>
+          <Route exact path="/newblog" render={(props) => <NewBlog {...props} />} />
+          <Route exact path="/panelgallery" render={() => <PanelGallery />} />
 
           <Route path="/">
             <Home />
