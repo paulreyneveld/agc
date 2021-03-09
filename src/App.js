@@ -66,6 +66,7 @@ const App = () => {
             <TestGallery />
           </Route>
           <Route exact path="/newblog" render={(props) => <NewBlog {...props} />}/>
+          <Route exact path="/panelgallery" render={() => <PanelGallery />}/>
 
           <Route path="/">
             <Home />
