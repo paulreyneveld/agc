@@ -8,7 +8,6 @@ import { useSelector } from 'react-redux'
 const Navigation = ({ handleLogout }) => {
     
     const user = useSelector(state => state.login.user)
-    console.log(user)
     const logoutButtonRelevant = () => {
         if (user) {
             return <Button variant="outline-primary" onClick={handleLogout}>Logout</Button>

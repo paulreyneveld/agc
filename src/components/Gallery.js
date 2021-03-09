@@ -12,7 +12,6 @@ const Gallery = () => {
     const [isLoading, setIsLoading] = useState(false)
 
     const photos = useSelector(state => state.photos)
-    const errors = useSelector(state => state.errors)
 
     const restructuredImages = photos.map(photo => { 
         return {
