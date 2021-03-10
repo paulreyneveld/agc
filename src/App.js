@@ -66,7 +66,7 @@ const App = () => {
           <Route exact path="/newblog" render={(props) => <NewBlog {...props} />} />
           <Route path="/updateblog" component={UpdateBlog} />
           <Route exact path="/panelgallery" render={() => <PanelGallery />} />
-
+          <Route path="updateblog/:id" component={UpdateBlog} />
           <Route path="/">
             <Home />
           </Route>

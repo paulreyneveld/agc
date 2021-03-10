@@ -16,7 +16,6 @@ const UpdateBlog = (/* id */) => {
                     placeholder="Enter title"
                     onChange={ console.log('change') } />
             </Form.Group>
-
             <Form.Group controlId="formBasicPassword">
                 <Form.Label>Blog</Form.Label>
                 <Form.Control 
