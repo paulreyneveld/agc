@@ -18,7 +18,6 @@ const NewBlog = (props) => {
             title,
             content
         }
-        console.log(newBlog)
         dispatch(addNewBlog(newBlog))
         props.history.push('/blog')
     }

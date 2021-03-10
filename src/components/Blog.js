@@ -4,6 +4,7 @@ import { initializeBlogs, deleteBlog, updateBlog } from '../reducers/blogReducer
 import { useDispatch, useSelector } from 'react-redux'
 import ReactMarkdown from 'react-markdown'
 import Button from 'react-bootstrap/Button'
+import { Link } from 'react-router-dom'
 
 const Blog = (props) => {
 
@@ -17,10 +18,6 @@ const Blog = (props) => {
 
     const removeBlog = (id) => {
         dispatch(deleteBlog(id))
-    }
-
-    const editBlog = (id) => {
-        dispatch(updateBlog(id))
     }
 
     const blogStyle = {
@@ -38,7 +35,7 @@ const Blog = (props) => {
                     <div key={blog.id} style={blogStyle}>
                     <h3 >{blog.title}</h3>
                     <Button variant="outline-primary" onClick={() => removeBlog(blog.id)}>Delete Post</Button>
-                    <Button variant="outline-primary" onClick={() => editBlog(blog.id)}>Edit</Button>
+                    <Link to={`/updateblog/${blog.id}`}><Button variant="outline-primary">Edit</Button></Link>
                     <ReactMarkdown source={blog.content} />
                     </div>
                 )

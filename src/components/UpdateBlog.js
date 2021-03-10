@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
-const UpdateBlog = (/* id */) => {
+const UpdateBlog = () => {
     return (
         <Container>
         <h1>Update Blog</h1>
