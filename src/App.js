@@ -14,6 +14,7 @@ import Gallery from './components/Gallery'
 import Login from './components/Login'
 import Footer from './components/Footer'
 import Upload from './components/UploadPhoto'
+import UpdateBlog from './components/UpdateBlog'
 import TestGallery from './components/TestGallery'
 import NewBlog from './components/NewBlog'
 import PanelGallery from './components/PanelGallery'
@@ -63,6 +64,7 @@ const App = () => {
             <TestGallery />
           </Route>
           <Route exact path="/newblog" render={(props) => <NewBlog {...props} />} />
+          <Route path="/updateblog" component={UpdateBlog} />
           <Route exact path="/panelgallery" render={() => <PanelGallery />} />
 
           <Route path="/">
