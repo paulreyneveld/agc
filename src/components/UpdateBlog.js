@@ -1,10 +1,15 @@
 import React from 'react'
-
+import { useDispatch, useSelector } from 'react-redux'
+import { getBlogData } from '../reducers/blogReducer' 
 import Container from 'react-bootstrap/Container'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
 const UpdateBlog = () => {
+
+    const blog = useSelector(state => state.blog)
+    console.log(blog)
+
     return (
         <Container>
         <h1>Update Blog</h1>

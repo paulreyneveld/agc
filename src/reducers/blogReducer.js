@@ -5,6 +5,8 @@ const blogReducer = (state = [], action) => {
     switch(action.type) {
         case "GET_BLOGS":
             return action.data.data
+        case "GET_BLOG":
+            return state.filter(blog => blog.id === action.data)
         case "NEW_BLOG":
             return state.concat(action.data)
         case "DELETE_BLOG":
@@ -49,6 +51,15 @@ export const deleteBlog = (id) => {
     }
 }
 
+export const getBlogData = (id) => {
+    return async dispatch => {
+        dispatch({
+            type: 'GET_BLOG', 
+            data: id
+        })
+    }
+}
+
 // edit blog
 export const updateBlog = (id) => {
     return async dispatch => {
@@ -60,7 +71,5 @@ export const updateBlog = (id) => {
         }
     }
 }
-
-
 
 export default blogReducer

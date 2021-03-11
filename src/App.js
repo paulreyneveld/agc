@@ -5,6 +5,7 @@ import {
   Route
 } from 'react-router-dom'
 import { initializeUser, clearUser } from './reducers/loginReducer'
+import { initializeBlogs } from './reducers/blogReducer'
 import { useDispatch } from 'react-redux'
 import Navigation from './components/Navigation'
 import Home from './components/Home'
@@ -34,6 +35,10 @@ const App = () => {
     }
     checkLoggedIn()
   }, [dispatch])
+
+  // useEffect(() => {
+  //   dispatch(initializeBlogs())
+  // }, [dispatch] )
   
   const handleLogout = () => {
     window.localStorage.removeItem('loggedBlogappUser')
@@ -64,7 +69,7 @@ const App = () => {
             <TestGallery />
           </Route>
           <Route exact path="/newblog" render={(props) => <NewBlog {...props} />} />
-          <Route path="/updateblog/:id" render={(props) => <UpdateBlog {...props} />} />
+          <Route path="/updateblog/:id"  component={UpdateBlog} />
           <Route exact path="/panelgallery" render={() => <PanelGallery />} />
           
           <Route path="/">
