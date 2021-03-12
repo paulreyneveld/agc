@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { getBlogData } from '../reducers/blogReducer' 
@@ -9,10 +9,11 @@ import Button from 'react-bootstrap/Button'
 const UpdateBlog = () => {
 
     const { id } = useParams()
-    console.log(id)
     const blogs = useSelector(state => state.blog)
     const blog = blogs.filter(blog => blog.id === id)
-    console.log(blog)
+
+    const [title, setTitle] = useState(blog[0].title)
+    const [content, setContent] = useState(blog[0].content)
     
 
     return (
@@ -23,6 +24,7 @@ const UpdateBlog = () => {
                 <Form.Label>Title:</Form.Label>
                 <Form.Control 
                     type="text" 
+                    value={title}
                     placeholder="Enter title"
                     onChange={ console.log('change') } />
             </Form.Group>
@@ -30,6 +32,7 @@ const UpdateBlog = () => {
                 <Form.Label>Blog</Form.Label>
                 <Form.Control 
                     as="textarea" 
+                    value={content}
                     placeholder="Type blog here. . ." 
                     rows={10}
                     onChange={ console.log('change') }
