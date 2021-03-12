@@ -14,19 +14,23 @@ const UpdateBlog = () => {
 
     const [title, setTitle] = useState(blog[0].title)
     const [content, setContent] = useState(blog[0].content)
-    
 
+    const updateBlog = (event) => {
+        event.preventDefault()
+        console.log('update here')
+    }
+    
     return (
         <Container>
         <h1>Update Blog</h1>
-        <Form onSubmit={console.log('submit updated blog')}>
+        <Form onSubmit={updateBlog}>
             <Form.Group controlId="formNewBlog">
                 <Form.Label>Title:</Form.Label>
                 <Form.Control 
                     type="text" 
                     value={title}
                     placeholder="Enter title"
-                    onChange={ console.log('change') } />
+                    onChange={ ({ target}) => setTitle(target.value) } />
             </Form.Group>
             <Form.Group controlId="formBasicPassword">
                 <Form.Label>Blog</Form.Label>
@@ -35,7 +39,7 @@ const UpdateBlog = () => {
                     value={content}
                     placeholder="Type blog here. . ." 
                     rows={10}
-                    onChange={ console.log('change') }
+                    onChange={ ({ target }) => setContent(target.value) }
                 />              
             </Form.Group>
             <Button variant="primary" type="submit">
