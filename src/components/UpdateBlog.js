@@ -1,4 +1,5 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { getBlogData } from '../reducers/blogReducer' 
 import Container from 'react-bootstrap/Container'
@@ -7,8 +8,12 @@ import Button from 'react-bootstrap/Button'
 
 const UpdateBlog = () => {
 
-    const blog = useSelector(state => state.blog)
+    const { id } = useParams()
+    console.log(id)
+    const blogs = useSelector(state => state.blog)
+    const blog = blogs.filter(blog => blog.id === id)
     console.log(blog)
+    
 
     return (
         <Container>
