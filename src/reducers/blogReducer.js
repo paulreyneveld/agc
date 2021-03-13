@@ -8,8 +8,7 @@ const blogReducer = (state = [], action) => {
         case "NEW_BLOG":
             return state.concat(action.data)
         case "UPDATE_BLOG":
-            console.log(action.data)
-            // return state.filter(blog => blog.id !== action.id).concat(action.data)
+            return state.filter(item => item.id !== action.data.id).concat(action.data)
         case "DELETE_BLOG":
             return state.filter(blog => blog.id !== action.data)
         default: 
@@ -67,9 +66,9 @@ export const editBlog = (id, newBlog) => {
     return async dispatch => {
         try {
             // await axios.put(`${BASE_API_URL}/blog/${id}`, newBlog)
+            newBlog.id = id
             dispatch({
                 type: 'UPDATE_BLOG',
-                id: id,
                 data: newBlog
             })
         }
