@@ -52,7 +52,7 @@ export const deleteBlog = (id) => {
 }
 
 // edit blog
-export const updateBlog = (id) => {
+export const updateBlog = (id, newBlog) => {
     return async dispatch => {
         try {
             await axios.put(`${BASE_API_URL}/blog/${id}`, newBlog)

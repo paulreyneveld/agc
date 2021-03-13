@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { getBlogData } from '../reducers/blogReducer' 
 import Container from 'react-bootstrap/Container'
+import { updateBlog } from '../reducers/blogReducer'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
 const UpdateBlog = () => {
+
+    const dispatch = useDispatch()
 
     const { id } = useParams()
     const blogs = useSelector(state => state.blog)
@@ -18,6 +20,11 @@ const UpdateBlog = () => {
     const updateBlog = (event) => {
         event.preventDefault()
         console.log('update here')
+        const updatedBlog = {
+            title, 
+            content
+        }
+        dispatch(updateBlog(id, updatedBlog))   
     }
     
     return (
