@@ -18,21 +18,31 @@ const blogReducer = (state = [], action) => {
 
 export const initializeBlogs = () => {
     return async dispatch => {
-        const blogs = await axios.get(`${BASE_API_URL}/blog`)
-        dispatch({
-            type: 'GET_BLOGS',
-            data: blogs
-        })
+        try {
+            const blogs = await axios.get(`${BASE_API_URL}/blog`)
+            dispatch({
+                type: 'GET_BLOGS',
+                data: blogs
+            })
+        }
+        catch (error) {
+            console.log(error)
+        }
     }
 }
 
 export const addNewBlog = (newBlog) => {
     return async dispatch => {
-        const blog = await axios.post(`${BASE_API_URL}/blog`, newBlog)
-        dispatch({
-            type: 'NEW_BLOG',
-            data: blog
-        })
+        try {
+            const blog = await axios.post(`${BASE_API_URL}/blog`, newBlog)
+            dispatch({
+                type: 'NEW_BLOG',
+                data: blog
+            })
+        }
+        catch (error) {
+            console.log(error)
+        }
     }
 }
 
