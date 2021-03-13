@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import Container from 'react-bootstrap/Container'
-import { updateBlog } from '../reducers/blogReducer'
+import { editBlog } from '../reducers/blogReducer'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
@@ -24,7 +24,7 @@ const UpdateBlog = () => {
             title, 
             content
         }
-        dispatch(updateBlog(id, updatedBlog))   
+        dispatch(editBlog(id, updatedBlog))   
     }
     
     return (
