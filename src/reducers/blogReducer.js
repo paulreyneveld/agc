@@ -51,20 +51,11 @@ export const deleteBlog = (id) => {
     }
 }
 
-export const getBlogData = (id) => {
-    return async dispatch => {
-        dispatch({
-            type: 'GET_BLOG', 
-            data: id
-        })
-    }
-}
-
 // edit blog
 export const updateBlog = (id) => {
     return async dispatch => {
         try {
-            // await axios.put(`${BASE_API_URL}/blog/${id}`)
+            await axios.put(`${BASE_API_URL}/blog/${id}`, newBlog)
         }
         catch (error) {
             console.log(error)
