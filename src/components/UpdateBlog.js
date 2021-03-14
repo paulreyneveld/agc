@@ -16,6 +16,7 @@ const UpdateBlog = () => {
 
     const [title, setTitle] = useState(blog[0].title)
     const [content, setContent] = useState(blog[0].content)
+    const [notification, setNotification] = useState(false)
 
     const updateBlog = (event) => {
         event.preventDefault()
@@ -26,13 +27,20 @@ const UpdateBlog = () => {
         }
         dispatch(editBlog(id, updatedBlog))   
         setTitle('')
-        setAuthor('')
-        
+        setContent('')
+        setNotification(true)
+    }
+
+    const confirmation = () => {
+        if (notification) {
+            return <p>Post Submitted</p>
+        }
     }
     
     return (
         <Container>
         <h1>Update Blog</h1>
+        {confirmation()}
         <Form onSubmit={updateBlog}>
             <Form.Group controlId="formNewBlog">
                 <Form.Label>Title:</Form.Label>
