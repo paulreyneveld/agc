@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import Container from 'react-bootstrap/Container'
-import { initializeBlogs, deleteBlog, updateBlog } from '../reducers/blogReducer'
+import { initializeBlogs, deleteBlog } from '../reducers/blogReducer'
 import { useDispatch, useSelector } from 'react-redux'
 import ReactMarkdown from 'react-markdown'
 import Button from 'react-bootstrap/Button'

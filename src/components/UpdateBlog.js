@@ -5,7 +5,6 @@ import Container from 'react-bootstrap/Container'
 import { editBlog } from '../reducers/blogReducer'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-import { propTypes } from 'react-bootstrap/esm/Image'
 
 const UpdateBlog = (props) => {
 

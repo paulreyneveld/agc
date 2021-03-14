@@ -5,7 +5,6 @@ import {
   Route
 } from 'react-router-dom'
 import { initializeUser, clearUser } from './reducers/loginReducer'
-import { initializeBlogs } from './reducers/blogReducer'
 import { useDispatch } from 'react-redux'
 import Navigation from './components/Navigation'
 import Home from './components/Home'
