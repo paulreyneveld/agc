@@ -5,8 +5,9 @@ import Container from 'react-bootstrap/Container'
 import { editBlog } from '../reducers/blogReducer'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import { propTypes } from 'react-bootstrap/esm/Image'
 
-const UpdateBlog = () => {
+const UpdateBlog = (props) => {
 
     const dispatch = useDispatch()
 
@@ -20,7 +21,7 @@ const UpdateBlog = () => {
 
     const updateBlog = (event) => {
         event.preventDefault()
-        console.log('update here')
+
         const updatedBlog = {
             title, 
             content
@@ -29,6 +30,11 @@ const UpdateBlog = () => {
         setTitle('')
         setContent('')
         setNotification(true) // Set a time constraint
+        setTimeout(() => {
+            setNotification(false)
+            props.history.push('/blog')
+        }, 2000)
+
     }
 
     const confirmation = () => {

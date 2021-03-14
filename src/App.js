@@ -69,7 +69,8 @@ const App = () => {
             <TestGallery />
           </Route>
           <Route exact path="/newblog" render={(props) => <NewBlog {...props} />} />
-          <Route path="/updateblog/:id"  component={UpdateBlog} />
+          <Route path="/updateblog/:id"  render={(props) => <UpdateBlog {...props} />} />
+          {/* <Route path="/updateblog/:id"  component={UpdateBlog} /> */}
           <Route exact path="/panelgallery" render={() => <PanelGallery />} />
           
           <Route path="/">
