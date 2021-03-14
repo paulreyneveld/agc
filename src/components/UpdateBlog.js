@@ -25,6 +25,9 @@ const UpdateBlog = () => {
             content
         }
         dispatch(editBlog(id, updatedBlog))   
+        setTitle('')
+        setAuthor('')
+        
     }
     
     return (
