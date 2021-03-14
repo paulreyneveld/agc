@@ -15,6 +15,18 @@ const Blog = (props) => {
       }, [dispatch] )
 
     const blogs = useSelector(state => state.blog)
+    const user = useSelector(state => state.login.user)
+
+    const adminFeatures = (blog) => {
+        if (user) {
+            return (
+                <>
+                <Button variant="outline-primary" onClick={() => removeBlog(blog.id)}>Delete Post</Button>
+                <Link to={`/updateblog/${blog.id}`}><Button variant="outline-primary">Edit</Button></Link>
+                </>
+            )
+        }
+    }
 
     const removeBlog = (id) => {
         dispatch(deleteBlog(id))
@@ -33,9 +45,8 @@ const Blog = (props) => {
             {blogs && blogs.slice(0).reverse().map(blog => {
                 return (
                     <div key={blog.id} style={blogStyle}>
-                    <h3 >{blog.title}</h3>
-                    <Button variant="outline-primary" onClick={() => removeBlog(blog.id)}>Delete Post</Button>
-                    <Link to={`/updateblog/${blog.id}`}><Button variant="outline-primary">Edit</Button></Link>
+                    <h3 >{blog.title}</h3> 
+                    {adminFeatures(blog)}
                     <ReactMarkdown source={blog.content} />
                     </div>
                 )
