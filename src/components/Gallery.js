@@ -19,8 +19,6 @@ const Gallery = () => {
         }
     })
 
-    console.log(restructuredImages)
-
     useEffect(() => {
         setIsLoading(true);
         dispatch(startLoadPhotos());
@@ -32,7 +30,6 @@ const Gallery = () => {
         }
     }, [photos])
 
-    console.log(photos)
     return (
         <Container>
             <p>hello</p>
