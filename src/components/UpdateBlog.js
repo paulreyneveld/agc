@@ -28,7 +28,7 @@ const UpdateBlog = () => {
         dispatch(editBlog(id, updatedBlog))   
         setTitle('')
         setContent('')
-        setNotification(true)
+        setNotification(true) // Set a time constraint
     }
 
     const confirmation = () => {

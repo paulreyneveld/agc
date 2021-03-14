@@ -14,6 +14,14 @@ const Navigation = ({ handleLogout }) => {
         }
     }
 
+    const loginButtonRelevant = () => {
+        if (!user) {
+            return (
+                <Link to={`/login`}><Button variant="outline-primary">Login</Button></Link>
+            )
+        }
+    }
+
     const authMenuView = () => {
         if (user) {
             return (
@@ -36,7 +44,6 @@ const Navigation = ({ handleLogout }) => {
             <Nav.Link as={Link} to="/blog">Blog</Nav.Link>
             <Nav.Link as={Link} to="/about">About</Nav.Link>
             <Nav.Link as={Link} to="/gallery">Gallery</Nav.Link>
-            <Nav.Link as={Link} to="/login">Login</Nav.Link>
             <Nav.Link as={Link} to="/testgallery">TestGallery</Nav.Link>
             <Nav.Link as={Link} to="/panelgallery">Panel Gallery</Nav.Link>
             {authMenuView()}
@@ -44,6 +51,7 @@ const Navigation = ({ handleLogout }) => {
         </Navbar.Collapse>
         
         {logoutButtonRelevant()}
+        {loginButtonRelevant()}
     </Navbar>
     
     </Nav>
