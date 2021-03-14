@@ -29,11 +29,11 @@ const UpdateBlog = (props) => {
         dispatch(editBlog(id, updatedBlog))   
         setTitle('')
         setContent('')
-        setNotification(true) // Set a time constraint
+        setNotification(true)
         setTimeout(() => {
             setNotification(false)
             props.history.push('/blog')
-        }, 2000)
+        }, 1500)
 
     }
 
@@ -46,7 +46,6 @@ const UpdateBlog = (props) => {
     return (
         <Container>
         <h1>Update Blog</h1>
-        {confirmation()}
         <Form onSubmit={updateBlog}>
             <Form.Group controlId="formNewBlog">
                 <Form.Label>Title:</Form.Label>
@@ -70,6 +69,7 @@ const UpdateBlog = (props) => {
                 Submit
             </Button>
             </Form>
+            {confirmation()}
     </Container>
     )
 }

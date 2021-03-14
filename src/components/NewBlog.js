@@ -11,6 +11,7 @@ const NewBlog = (props) => {
 
     const [title, setTitle] = useState(null)
     const [content, setContent] = useState(null)
+    const [notification, setNotification] = useState(false)
 
     const createNewBlog = (event) => {
         event.preventDefault()
@@ -19,7 +20,20 @@ const NewBlog = (props) => {
             content
         }
         dispatch(addNewBlog(newBlog))
-        props.history.push('/blog')
+        setTitle('')
+        setContent('')
+        setNotification(true)
+        setTimeout(() => {
+            setNotification(false)
+            props.history.push('/blog')
+        }, 1500)
+        // props.history.push('/blog')
+    }
+
+    const confirmation = () => {
+        if (notification) {
+            return <p>Post Submitted</p>
+        }
     }
 
     return (
@@ -47,6 +61,7 @@ const NewBlog = (props) => {
                     Submit
                 </Button>
                 </Form>
+                {confirmation()}
         </Container>
     )
 }
