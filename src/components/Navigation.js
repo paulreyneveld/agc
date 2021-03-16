@@ -53,7 +53,6 @@ const Navigation = ({ handleLogout }) => {
         {logoutButtonRelevant()}
         {loginButtonRelevant()}
     </Navbar>
-    
     </Nav>
     )
 }

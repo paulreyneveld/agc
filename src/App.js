@@ -18,6 +18,7 @@ import UpdateBlog from './components/UpdateBlog'
 import TestGallery from './components/TestGallery'
 import NewBlog from './components/NewBlog'
 import PanelGallery from './components/PanelGallery'
+import ImageUpload from './components/ImageUpload'
 
 const App = () => {
 
@@ -34,10 +35,6 @@ const App = () => {
     }
     checkLoggedIn()
   }, [dispatch])
-
-  // useEffect(() => {
-  //   dispatch(initializeBlogs())
-  // }, [dispatch] )
   
   const handleLogout = () => {
     window.localStorage.removeItem('loggedBlogappUser')
@@ -54,6 +51,8 @@ const App = () => {
           <Route path="/blog">
             <Blog />
           </Route>
+          <Route exact path="/newblog" render={(props) => <NewBlog {...props} />} />
+          <Route path="/updateblog/:id"  render={(props) => <UpdateBlog {...props} />} />
           <Route path="/about">
             <About />
           </Route>
@@ -67,9 +66,7 @@ const App = () => {
           <Route path="/testgallery">
             <TestGallery />
           </Route>
-          <Route exact path="/newblog" render={(props) => <NewBlog {...props} />} />
-          <Route path="/updateblog/:id"  render={(props) => <UpdateBlog {...props} />} />
-          {/* <Route path="/updateblog/:id"  component={UpdateBlog} /> */}
+          <Route path="/imageupload" component={ImageUpload} />
           <Route exact path="/panelgallery" render={() => <PanelGallery />} />
           
           <Route path="/">
