@@ -10,7 +10,11 @@ const imageReducer = (state = [], action) => {
   }
 }
 
-
+export const uploadImages = (photos) => {
+  return async (dispatch) => {
+    console.log(photos)
+  }
+}
 
 export default imageReducer
 

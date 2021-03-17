@@ -48,7 +48,6 @@ const ImageUpload = () => {
             isDragging,
             dragProps,
             }) => (
-            // write your building UI
             <div className="upload__image-wrapper">
                 <Button
                 variant="outline-primary"
