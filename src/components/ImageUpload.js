@@ -12,6 +12,11 @@ const ImageUpload = () => {
         setImages(imageList)
     }
 
+    const buttonStyle = {
+        marginRight: "0.5em",
+        marginBottom: "1em"
+    }
+
     return (
         <>
         <Container>
@@ -38,17 +43,18 @@ const ImageUpload = () => {
                 style={isDragging ? { color: 'red' } : undefined}
                 onClick={onImageUpload}
                 {...dragProps}
+                style={buttonStyle}
                 >
                 Click or Drop here
                 </Button>
                 &nbsp;
-                <Button variant="outline-primary" onClick={onImageRemoveAll}>Remove all images</Button>
+                <Button style={buttonStyle} variant="outline-primary" onClick={onImageRemoveAll}>Remove all images</Button>
                 {imageList.map((image, index) => (
                 <div key={index} className="image-item">
                     <img src={image['data_url']} alt="" width="100" />
                     <div className="image-item__btn-wrapper">
-                    <Button variant="outline-primary" onClick={() => onImageUpdate(index)}>Update</Button>
-                    <Button variant="outline-primary" onClick={() => onImageRemove(index)}>Remove</Button>
+                    <Button style={buttonStyle} style={{marginTop: "0.5em"}} button variant="outline-primary" onClick={() => onImageUpdate(index)}>Update</Button>
+                    <Button style={buttonStyle} style={{marginTop: "0.5em"}} variant="outline-primary" onClick={() => onImageRemove(index)}>Remove</Button>
                     </div>
                 </div>
                 ))}
