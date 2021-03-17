@@ -3,7 +3,7 @@ import ImageUploading from 'react-images-uploading'
 import Container from 'react-bootstrap/Container'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
-import { uploadImage } from '../reducers/imageReducer'
+import { uploadImages } from '../reducers/imageReducer'
 import { useDispatch } from 'react-redux'
 
 const ImageUpload = () => {
@@ -13,7 +13,7 @@ const ImageUpload = () => {
     const dispatch = useDispatch()
 
     const onChange = (imageList, addUpdateIndex) => {
-        console.log(imageList, addUpdateIndex)
+        // console.log(imageList, addUpdateIndex)
         setImages(imageList)
     }
 
@@ -22,6 +22,7 @@ const ImageUpload = () => {
     const handleFormSubmit = (event) => {
         event.preventDefault()
         console.log('submitted')
+        dispatch(uploadImages(images))
     }
 
     const buttonStyle = {
