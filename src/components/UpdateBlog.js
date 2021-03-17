@@ -41,6 +41,10 @@ const UpdateBlog = (props) => {
             return <p>Post Submitted</p>
         }
     }
+
+    const buttonStyle = {
+        marginBottom: "1em"
+    }
     
     return (
         <Container>
@@ -64,7 +68,7 @@ const UpdateBlog = (props) => {
                     onChange={ ({ target }) => setContent(target.value) }
                 />              
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button style={buttonStyle} variant="primary" type="submit">
                 Submit
             </Button>
             </Form>
