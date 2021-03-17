@@ -21,8 +21,8 @@ const Blog = (props) => {
         if (user) {
             return (
                 <>
-                <Button variant="outline-primary" onClick={() => removeBlog(blog.id)}>Delete Post</Button>
-                <Link to={`/updateblog/${blog.id}`}><Button variant="outline-primary">Edit</Button></Link>
+                <Button style={buttonStyle} variant="outline-primary" onClick={() => removeBlog(blog.id)}>Delete Post</Button>
+                <Link to={`/updateblog/${blog.id}`}><Button style={buttonStyle} variant="outline-primary">Edit</Button></Link>
                 </>
             )
         }
@@ -30,6 +30,11 @@ const Blog = (props) => {
 
     const removeBlog = (id) => {
         dispatch(deleteBlog(id))
+    }
+
+    const buttonStyle = {
+        marginRight: "0.5em",
+        marginBottom: "1em"
     }
 
     const blogStyle = {
