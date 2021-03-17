@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import ImageUploading from 'react-images-uploading'
 import Container from 'react-bootstrap/Container'
 import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
 
 const ImageUpload = () => {
     const [images, setImages] = useState([])
@@ -17,9 +18,20 @@ const ImageUpload = () => {
         marginBottom: "1em"
     }
 
+    const handleFormSubmit = (event) => {
+        event.preventDefault()
+        console.log('submitted')
+    }
+
     return (
         <>
         <Container>
+        <Form
+        onSubmit={handleFormSubmit}
+        method="post"
+        encType="multipart/form-data"
+        className="upload-form"
+        >
         <ImageUploading
             multiple
             value={images}
@@ -61,6 +73,13 @@ const ImageUpload = () => {
             </div>
             )}
         </ImageUploading>
+        <Button
+          variant="primary"
+          type="submit"
+        >
+          Upload
+        </Button>
+        </Form>
         </Container>
         </>
     )
