@@ -3,24 +3,30 @@ import ImageUploading from 'react-images-uploading'
 import Container from 'react-bootstrap/Container'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
+import { uploadImage } from '../reducers/imageReducer'
+import { useDispatch } from 'react-redux'
 
 const ImageUpload = () => {
     const [images, setImages] = useState([])
     const maxNumber = 10;    
+
+    const dispatch = useDispatch()
 
     const onChange = (imageList, addUpdateIndex) => {
         console.log(imageList, addUpdateIndex)
         setImages(imageList)
     }
 
-    const buttonStyle = {
-        marginRight: "0.5em",
-        marginBottom: "1em"
-    }
+
 
     const handleFormSubmit = (event) => {
         event.preventDefault()
         console.log('submitted')
+    }
+
+    const buttonStyle = {
+        marginRight: "0.5em",
+        marginBottom: "1em"
     }
 
     return (
@@ -73,7 +79,8 @@ const ImageUpload = () => {
             )}
         </ImageUploading>
         <Button
-          variant="primary"
+          style={buttonStyle}
+          variant="outline-primary"
           type="submit"
         >
           Upload
