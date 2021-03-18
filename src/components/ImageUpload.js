@@ -17,8 +17,6 @@ const ImageUpload = () => {
         setImages(imageList)
     }
 
-
-
     const handleFormSubmit = (event) => {
         event.preventDefault()
         console.log('submitted')

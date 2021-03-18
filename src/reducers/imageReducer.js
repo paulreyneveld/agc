@@ -15,6 +15,9 @@ export const uploadImages = (images) => {
     console.log(images)
     const formData = new FormData()
     formData.append('images', images)
+    // images.forEach(image => {
+    //   formData.append('images', image)
+    // })
     await axios.post(`${BASE_API_URL}/images`, formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
