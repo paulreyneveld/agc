@@ -14,10 +14,12 @@ export const uploadImages = (images) => {
   return async (dispatch) => {
     console.log(images)
     const formData = new FormData()
-    formData.append('images', images)
-    // images.forEach(image => {
-    //   formData.append('images', image)
-    // })
+    // formData.append('images', images)
+    console.log(formData)
+    images.forEach(image => {
+      formData.append('image', image.file)
+    })
+    console.log(formData)
     await axios.post(`${BASE_API_URL}/images`, formData, {
       headers: {
         'Content-Type': 'multipart/form-data'

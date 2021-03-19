@@ -14,6 +14,7 @@ const ImageUpload = () => {
 
     const onChange = (imageList, addUpdateIndex) => {
         // console.log(imageList, addUpdateIndex)
+        console.log(imageList)
         setImages(imageList)
     }
 
@@ -43,6 +44,7 @@ const ImageUpload = () => {
             onChange={onChange}
             maxNumber={maxNumber}
             dataURLKey="data_url"
+            type="file"
         >
             {({
             imageList,
