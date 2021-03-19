@@ -13,9 +13,10 @@ const photosReducer = (state = [], action) => {
 export const beginAddPhoto = (photo) => {
   return async (dispatch) => {
     try {
+      console.log('photo', photo)
       const formData = new FormData();
       formData.append('photo', photo);
-      console.log(formData)
+      // console.log(formData)
       await axios.post(`${BASE_API_URL}/photos`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
