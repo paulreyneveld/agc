@@ -19,6 +19,7 @@ import TestGallery from './components/TestGallery'
 import NewBlog from './components/NewBlog'
 import PanelGallery from './components/PanelGallery'
 import ImageUpload from './components/ImageUpload'
+import NewFooter from './components/NewFooter'
 
 const App = () => {
 
@@ -74,6 +75,7 @@ const App = () => {
           </Route>
         </Switch>
       <Footer />
+      <NewFooter />
     </Router>
     </>
   )
