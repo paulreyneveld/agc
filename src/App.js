@@ -74,7 +74,6 @@ const App = () => {
             <Home />
           </Route>
         </Switch>
-      <Footer />
       <NewFooter />
     </Router>
     </>

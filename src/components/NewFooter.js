@@ -6,7 +6,10 @@ const NewFooter  = () => {
 
     const style = {
         backgroundColor: '#FFEA8E',
-        height: '4em'
+        height: '4em',
+        position: 'absolute',
+        bottom: 0,
+        width: '100%'
     }
     
     return (
