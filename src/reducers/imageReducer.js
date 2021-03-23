@@ -13,10 +13,9 @@ const imageReducer = (state = [], action) => {
 export const uploadImages = (images) => {
   return async (dispatch) => {
     const formData = new FormData()
-    console.log(formData)
-    images.forEach(image => {
-      console.log(image)
-      formData.append(`images`, image)
+    images.forEach((image, index) => {
+      console.log(image.file)
+      formData.append(`images`, image.file)
     })
     console.log(formData)
     await axios.post(`${BASE_API_URL}/images`, formData, {

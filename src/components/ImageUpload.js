@@ -40,11 +40,11 @@ const ImageUpload = () => {
         >
         <ImageUploading
             multiple
+            type="file"
             value={images}
             onChange={onChange}
             maxNumber={maxNumber}
             dataURLKey="data_url"
-            type="file"
         >
             {({
             imageList,
