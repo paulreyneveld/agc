@@ -36,7 +36,7 @@ const Upload = () => {
         >
         <Form.Group>
           <Form.Label>Choose photo to upload</Form.Label>
-          <Form.Control type="file" name="photo" onChange={handleOnChange} />
+          <Form.Control multiple type="file" name="photo" onChange={handleOnChange} />
         </Form.Group>
         <Button
           variant="primary"
