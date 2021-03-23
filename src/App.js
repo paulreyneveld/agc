@@ -19,6 +19,7 @@ import TestGallery from './components/TestGallery'
 import NewBlog from './components/NewBlog'
 import PanelGallery from './components/PanelGallery'
 import ImageUpload from './components/ImageUpload'
+import FileUpload from './components/FileUpload'
 import NewFooter from './components/NewFooter'
 
 const App = () => {
@@ -64,6 +65,7 @@ const App = () => {
           <Route path="/upload">
             <Upload />
           </Route>
+          <Route path="/fileupload" component={FileUpload} />
           <Route path="/testgallery">
             <TestGallery />
           </Route>
