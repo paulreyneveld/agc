@@ -1,13 +1,37 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Container from 'react-bootstrap/Container'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import Image from 'react-bootstrap/Image'
 
 const FileUpload = () => {
+
+    const [file, setFile] = useState(null)
+    const [imagePreviewUrl, setImagePreviewUrl] = useState(null)
+
+    const handleFileChange = (event) => {
+        event.preventDefault()
+        const reader = new FileReader()
+        const file = event.target.files[0]
+        reader.onloadend = () => {
+            setFile(file)
+            setImagePreviewUrl(reader.result)
+        }
+        reader.readAsDataURL(file)
+    }
 
     const handleFormSubmit = (event) => {
         event.preventDefault()
         console.log('submitted')
+    }
+
+    const displayPreviews = () => {
+        if (imagePreviewUrl) {
+            return <Image src={imagePreviewUrl} thumbnail={true} />
+        }
+        else {
+            return <p>Please select an image to preview</p>
+        }
     }
 
     return (
@@ -19,15 +43,21 @@ const FileUpload = () => {
                 className="upload-form"
             >
                 <Form.Group>
-                    <Form.File multiple id="form-file-control" label="File input" />
+                    <Form.File 
+                        multiple 
+                        id="form-file-control" 
+                        label="File input" 
+                        onChange={handleFileChange} 
+                    />
                 </Form.Group>
                 <Button 
                     variant="outline-primary"
-                
+                    type="submit"
                 >
-                    Submit
+                Submit
                 </Button>
             </Form>
+            {displayPreviews()}
         </Container>
     )
 }
