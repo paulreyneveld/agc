@@ -6,6 +6,8 @@ import Form from 'react-bootstrap/Form'
 import { uploadImages } from '../reducers/imageReducer'
 import { useDispatch } from 'react-redux'
 
+// Testing github
+
 const ImageUpload = () => {
     const [images, setImages] = useState([])
     const maxNumber = 10;    
