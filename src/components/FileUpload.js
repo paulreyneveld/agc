@@ -8,31 +8,34 @@ import { uploadImages } from '../reducers/imageReducer'
 
 const FileUpload = () => {
 
-    const [files, setFiles] = useState(null)
+    const [files, setFiles] = useState([])
     const [imagePreviewUrl, setImagePreviewUrl] = useState(null)
 
     const dispatch = useDispatch() 
 
     const handleFileChange = (event) => {
         event.preventDefault()
-        const reader = new FileReader()
-        const file = event.target.files[0]
-        reader.onloadend = () => {
-            // setFile() what setFile()?
-            setFile(file)
-            setImagePreviewUrl(reader.result)
-        }
-        reader.readAsDataURL(file)
+        // const reader = new FileReader()
+        // const file = event.target.files[0]
+        // reader.onloadend = () => {
+        //     // setFile() what setFile()?
+        //     setFiles(file)
+        //     setImagePreviewUrl(reader.result)
+        // }
+        // reader.readAsDataURL(file)
         // Append the individual images to the local state
         // Then use dispatch to send the images to the reducer
         // Finally, send that whole array from the reducer to the backend
+        console.log(event.target.files)
+        setFiles(event.target.files)
     }
 
+    console.log(files)
+    console.log(typeof files)
     const handleFormSubmit = (event) => {
         event.preventDefault()
         console.log('submitted')
-        console.log(event.target)
-        // dispatch(uploadImages(event.target.file))
+        dispatch(uploadImages(files))
     }
 
     const displayPreviews = () => {
