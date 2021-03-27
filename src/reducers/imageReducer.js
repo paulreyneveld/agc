@@ -26,5 +26,21 @@ export const uploadImages = (images) => {
   }
 }
 
+export const startLoadImages = () => {
+  return async (dispatch) => {
+    try {
+      const images = await axios.get(`${BASE_API_URL}/images`);
+      dispatch(loadPhotos(images.data));
+    } catch (error) {
+      console.log(error)
+    }
+  };
+};
+  
+export const loadImages = (images) => ({
+  type: 'LOAD_IMAGES',
+  images
+});
+
 export default imageReducer
 
