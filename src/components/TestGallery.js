@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import Container from 'react-bootstrap/esm/Container'
 import Photo from './Photo'
 import { startLoadPhotos } from '../reducers/photosReducer'
+import { startLoadImages } from '../reducers/imageReducer'
 
 
 const TestGallery = () => {
@@ -11,28 +12,28 @@ const TestGallery = () => {
     
     const [isLoading, setIsLoading] = useState(false);
 
-    const photos = useSelector(state => state.photos)
+    const images = useSelector(state => state.images)
 
     useEffect(() => {
         setIsLoading(true);
-        dispatch(startLoadPhotos());
+        dispatch(startLoadImages());
     }, [dispatch]);
-
-    useEffect(() => {
-        if (photos.length > 0) {
-        setIsLoading(false);
-        }
-    }, [photos]);
+    console.log(images)
+    // useEffect(() => {
+    //     if (images.length > 0) {
+    //     setIsLoading(false);
+    //     }
+    // }, [images]);
 
     return (
         <Container>
-            <div className="photos-list">
+            {/* <div className="images-list">
             {isLoading ? (
                 <div>Loading...</div>
             ) : (
-                photos.map((photo) => <Photo key={photo._id} id={photo._id} />)
+                images.map((image) => <Photo key={image._id} id={image._id} />)
             )}
-            </div>
+            </div> */}
         </Container>
     )
 }
