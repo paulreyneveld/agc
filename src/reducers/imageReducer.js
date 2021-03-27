@@ -15,7 +15,7 @@ export const uploadImages = (images) => {
     console.log(images)
     const formData = new FormData()
     for (let i = 0; i < images.length; i++) {
-      formData.append('images', images[i])
+      formData.append('images', images[i].file)
     }
     console.log(formData)
     await axios.post(`${BASE_API_URL}/images`, formData, {

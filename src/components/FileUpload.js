@@ -9,29 +9,25 @@ import { uploadImages } from '../reducers/imageReducer'
 const FileUpload = () => {
 
     const [files, setFiles] = useState([])
-    const [imagePreviewUrl, setImagePreviewUrl] = useState(null)
+    const [imagePreviewUrl, setImagePreviewUrl] = useState([])
 
     const dispatch = useDispatch() 
 
     const handleFileChange = (event) => {
         event.preventDefault()
-        // const reader = new FileReader()
-        // const file = event.target.files[0]
-        // reader.onloadend = () => {
-        //     // setFile() what setFile()?
-        //     setFiles(file)
-        //     setImagePreviewUrl(reader.result)
-        // }
-        // reader.readAsDataURL(file)
-        // Append the individual images to the local state
-        // Then use dispatch to send the images to the reducer
-        // Finally, send that whole array from the reducer to the backend
-        console.log(event.target.files)
         setFiles(event.target.files)
+        // for (let i = 0; i < files.length; i++) {
+        //     const reader = new FileReader()
+        //     const file = event.target.files[i]
+        //     reader.onloadend = () => {
+        //         setImagePreviewUrl(reader.result)
+        //         // setImagePreviewUrl(imagePreviewUrl.concat(reader.result))
+        //         // console.log(imagePreviewUrl)
+        //     }
+        //     reader.readAsDataURL(file)
+        // }
     }
 
-    console.log(files)
-    console.log(typeof files)
     const handleFormSubmit = (event) => {
         event.preventDefault()
         console.log('submitted')
@@ -39,7 +35,7 @@ const FileUpload = () => {
     }
 
     const displayPreviews = () => {
-        if (imagePreviewUrl) {
+        if (imagePreviewUrl.length > 0) {
             return <Image src={imagePreviewUrl} thumbnail={true} />
         }
         else {
