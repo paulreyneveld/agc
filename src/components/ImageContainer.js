@@ -1,8 +1,7 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
-import Image from 'react-image-resizer'
 
-const Photo = ({ id }) => {
+const ImageContainer = ({ id }) => {
   return (
     // <Card className="photo">
     //   <Card.Img
@@ -19,4 +18,4 @@ const Photo = ({ id }) => {
   )
 }
 
-export default Photo
+export default ImageContainer

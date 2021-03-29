@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Container from 'react-bootstrap/esm/Container'
-import Photo from './Photo'
+import ImageContainer from './ImageContainer'
 import { startLoadImages } from '../reducers/imageReducer'
-
 
 const TestGallery = () => {
 
@@ -31,7 +30,7 @@ const TestGallery = () => {
             {isLoading ? (
                 <div>Loading...</div>
             ) : (
-                images.map((image) => <Photo key={image._id} id={image._id} />)
+                images.map((image) => <ImageContainer key={image._id} id={image._id} />)
             )}
             </div>
         </Container>

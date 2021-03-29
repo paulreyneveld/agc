@@ -32,12 +32,10 @@ const Gallery = () => {
 
     return (
         <Container>
-            <p>hello</p>
             <ImageGallery 
                 items={restructuredImages} 
                 showFullscreenButton={false}
                 showPlayButton={false}
-
             />
         </Container>
     )
