@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Container from 'react-bootstrap/esm/Container'
 import Photo from './Photo'
-import { startLoadPhotos } from '../reducers/photosReducer'
 import { startLoadImages } from '../reducers/imageReducer'
 
 
