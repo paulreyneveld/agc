@@ -12,8 +12,8 @@ const TestGallery = () => {
     
     const [isLoading, setIsLoading] = useState(false);
 
-    const images = useSelector(state => state.images)
-
+    const images = useSelector(state => state)
+    console.log(images)
     useEffect(() => {
         setIsLoading(true);
         dispatch(startLoadImages());
