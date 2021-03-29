@@ -12,7 +12,7 @@ const Photo = ({ id }) => {
     //   />
     // </Card>
     <img 
-      src={`http://localhost:3001/api/photos/${id}`}
+      src={`http://localhost:3001/api/images/${id}`}
       height={300}
       width={300}
     />

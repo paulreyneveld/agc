@@ -19,6 +19,7 @@ const TestGallery = () => {
         dispatch(startLoadImages());
     }, [dispatch]);
 
+    console.log(images)
     useEffect(() => {
         if (images.length > 0) {
         setIsLoading(false);
