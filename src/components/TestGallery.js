@@ -12,28 +12,28 @@ const TestGallery = () => {
     
     const [isLoading, setIsLoading] = useState(false);
 
-    const images = useSelector(state => state)
-    console.log(images)
+    const images = useSelector(state => state.images)
+
     useEffect(() => {
         setIsLoading(true);
         dispatch(startLoadImages());
     }, [dispatch]);
-    console.log(images)
-    // useEffect(() => {
-    //     if (images.length > 0) {
-    //     setIsLoading(false);
-    //     }
-    // }, [images]);
+
+    useEffect(() => {
+        if (images.length > 0) {
+        setIsLoading(false);
+        }
+    }, [images]);
 
     return (
         <Container>
-            {/* <div className="images-list">
+            <div className="images-list">
             {isLoading ? (
                 <div>Loading...</div>
             ) : (
                 images.map((image) => <Photo key={image._id} id={image._id} />)
             )}
-            </div> */}
+            </div>
         </Container>
     )
 }
