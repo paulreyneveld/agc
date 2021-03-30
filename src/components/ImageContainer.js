@@ -1,5 +1,7 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
+import Image from 'react-bootstrap/Image'
+import Col from 'react-bootstrap/Col'
 
 const ImageContainer = ({ id }) => {
   return (
@@ -10,11 +12,11 @@ const ImageContainer = ({ id }) => {
     //     alt="Photo"
     //   />
     // </Card>
-    <img 
+    <Col xs={6} md={4} lg={2}>
+    <Image 
       src={`http://localhost:3001/api/images/${id}`}
-      height={300}
-      width={300}
     />
+    </Col>
   )
 }
 
