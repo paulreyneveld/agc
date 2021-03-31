@@ -1,8 +1,11 @@
 import React from 'react'
+import Container from 'react-bootstrap/Container'
 
 const PanelGallery = () => {
     return (
-        <h2>Hello</h2>
+        <Container>
+            <h2>Hello</h2>
+        </Container>
     )
 }
 
