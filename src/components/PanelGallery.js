@@ -16,16 +16,16 @@ const PanelGallery = () => {
 
     console.log(images)
 
-    const displayImages = () => {
-        if (images.length > 0) {
-            return <Gallery images={images} />
-        }
-    }
+    // const displayImages = () => {
+    //     if (images.length > 0) {
+    //         return <Gallery images={images} />
+    //     }
+    // }
 
     return (
         <Container>
             <h2>Hello</h2>
-            {displayImages()}
+            <Gallery images={images} />
         </Container>
     )
 }
