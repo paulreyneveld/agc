@@ -17,15 +17,20 @@ const PanelGallery = () => {
     const imageStyle = {
         height: 250,
         width: 250,
-        objectFit: 'cover',
+        objectFit: 'contain',
         marginRight: '1em',
         marginBottom: '1em',
         float: 'left'
     }
 
+    const divStyle = {
+        marginLeft: 'auto',
+        marginRight: 'auto'
+    }
+
     return (
         <Container>
-        <div>
+        <div style={divStyle}>
             {images.map( image => {
                 return <Image style={imageStyle} src={`http://localhost:3001/api/images/${image._id}`} />
             })}
