@@ -14,18 +14,22 @@ const PanelGallery = () => {
 
     const images = useSelector(state => state.images)
 
-    const style = {
-        height: 300,
-        width: 300
+    const imageStyle = {
+        height: 250,
+        width: 250,
+        objectFit: 'cover',
+        marginRight: '1em',
+        marginBottom: '1em',
+        float: 'left'
     }
 
     return (
         <Container>
-            <h2>Hello</h2>
+        <div>
             {images.map( image => {
-                return <Image style={style} src={`http://localhost:3001/api/images/${image._id}`} />
+                return <Image style={imageStyle} src={`http://localhost:3001/api/images/${image._id}`} />
             })}
-            
+        </div>
         </Container>
     )
 }
