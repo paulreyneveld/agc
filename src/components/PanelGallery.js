@@ -8,11 +8,20 @@ const PanelGallery = () => {
 
     const dispatch = useDispatch() 
 
+    const [loading, setLoading] = useState(false)
+
+    const images = useSelector(state => state.images)
+    
     useEffect(() => {
+        setLoading(true)
         dispatch(startLoadImages());
     }, [dispatch]);
 
-    const images = useSelector(state => state.images)
+    useEffect(() => {
+        if (images.length > 0 && images.length) {
+            setLoading(false)
+        }
+    }, [images])
 
     const imageStyle = {
         height: 250,
@@ -31,8 +40,11 @@ const PanelGallery = () => {
     return (
         <Container>
         <div style={divStyle}>
-            {images.map( image => {
-                return <Image style={imageStyle} src={`http://localhost:3001/api/images/${image._id}`} />
+            {loading ? (
+                <div>Loading. . .</div>
+            )
+            : images.map( image => {
+                return <Image style={imageStyle} key={image._id} src={`http://localhost:3001/api/images/${image._id}`} />
             })}
         </div>
         </Container>
