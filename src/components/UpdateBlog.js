@@ -38,7 +38,7 @@ const UpdateBlog = (props) => {
 
     const confirmation = () => {
         if (notification) {
-            return <p>Post Submitted</p>
+            return <p>Updating. . .</p>
         }
     }
 
