@@ -15,7 +15,6 @@ import Login from './components/Login'
 import Footer from './components/Footer'
 import Upload from './components/UploadPhoto'
 import UpdateBlog from './components/UpdateBlog'
-import TestGallery from './components/TestGallery'
 import NewBlog from './components/NewBlog'
 import PanelGallery from './components/PanelGallery'
 import ImageUpload from './components/ImageUpload'
@@ -66,12 +65,8 @@ const App = () => {
             <Upload />
           </Route>
           <Route path="/fileupload" component={FileUpload} />
-          <Route path="/testgallery">
-            <TestGallery />
-          </Route>
           <Route path="/imageupload" component={ImageUpload} />
           <Route exact path="/panelgallery" render={() => <PanelGallery />} />
-          
           <Route path="/">
             <Home />
           </Route>

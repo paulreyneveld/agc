@@ -44,7 +44,6 @@ const Navigation = ({ handleLogout }) => {
             <Nav.Link as={Link} to="/blog">Blog</Nav.Link>
             <Nav.Link as={Link} to="/about">About</Nav.Link>
             <Nav.Link as={Link} to="/gallery">Gallery</Nav.Link>
-            <Nav.Link as={Link} to="/testgallery">TestGallery</Nav.Link>
             <Nav.Link as={Link} to="/panelgallery">Panel Gallery</Nav.Link>
             <Nav.Link as={Link} to="/imageupload">Image Upload</Nav.Link>
             <Nav.Link as={Link} to="/fileupload">File Upload</Nav.Link>
