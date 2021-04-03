@@ -13,14 +13,11 @@ const ImageUpload = () => {
     const dispatch = useDispatch()
 
     const onChange = (imageList, addUpdateIndex) => {
-        // console.log(imageList, addUpdateIndex)
-        console.log(imageList)
         setImages(imageList)
     }
 
     const handleFormSubmit = (event) => {
         event.preventDefault()
-        console.log('submitted')
         dispatch(uploadImages(images))
     }
 

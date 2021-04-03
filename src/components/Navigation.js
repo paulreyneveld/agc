@@ -26,8 +26,8 @@ const Navigation = ({ handleLogout }) => {
         if (user) {
             return (
                 <>
-                <Nav.Link as={Link} to="/upload">Upload</Nav.Link>
                 <Nav.Link as={Link} to="/newblog">New Blog</Nav.Link>
+                <Nav.Link as={Link} to="/imageupload">Image Upload</Nav.Link>
                 </>
             )
         }
@@ -45,7 +45,6 @@ const Navigation = ({ handleLogout }) => {
             <Nav.Link as={Link} to="/about">About</Nav.Link>
             <Nav.Link as={Link} to="/gallery">Gallery</Nav.Link>
             <Nav.Link as={Link} to="/panelgallery">Panel Gallery</Nav.Link>
-            <Nav.Link as={Link} to="/imageupload">Image Upload</Nav.Link>
             {authMenuView()}
             </Nav>
         </Navbar.Collapse>

@@ -13,7 +13,6 @@ import About from './components/About'
 import Gallery from './components/Gallery'
 import Login from './components/Login'
 import Footer from './components/Footer'
-import Upload from './components/UploadPhoto'
 import UpdateBlog from './components/UpdateBlog'
 import NewBlog from './components/NewBlog'
 import PanelGallery from './components/PanelGallery'
@@ -60,9 +59,6 @@ const App = () => {
             <Gallery />
           </Route>
           <Route path="/login"  render={(props) => <Login {...props} />}/>
-          <Route path="/upload">
-            <Upload />
-          </Route>
           <Route path="/imageupload" component={ImageUpload} />
           <Route exact path="/panelgallery" render={() => <PanelGallery />} />
           <Route path="/">
