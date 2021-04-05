@@ -68,10 +68,10 @@ const App = () => {
           </Route>
           <Route path="/login"  render={(props) => <Login {...props} />}/>
           <Route path="/imageupload" component={ImageUpload} />
-          {/* <ProtectedRoute exact path="/panelgallery" user={user} component={PanelGallery} /> */}
-          <Route path="/panelgallery">
+          <ProtectedRoute exact path="/panelgallery" component={PanelGallery} />
+          {/* <Route path="/panelgallery">
             {isAuthenticated ? <PanelGallery /> : <Error />}
-          </Route>
+          </Route> */}
           <Route path="/error" component={Error} />
           <Route path="/">
             <Home />
