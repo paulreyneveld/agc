@@ -19,6 +19,7 @@ import PanelGallery from './components/PanelGallery'
 import ImageUpload from './components/ImageUpload'
 import NewFooter from './components/NewFooter'
 import Error from './components/Error'
+import ProtectedRoute from './components/ProtectedRoute'
 
 const App = () => {
 
@@ -63,7 +64,7 @@ const App = () => {
           </Route>
           <Route path="/login"  render={(props) => <Login {...props} />}/>
           <Route path="/imageupload" component={ImageUpload} />
-          <Route exact path="/panelgallery" render={() => <PanelGallery />} />
+          <ProtectedRoute exact path="/panelgallery" component={PanelGallery} />
           <Route path="/">
             <Home />
           </Route>
