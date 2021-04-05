@@ -1,11 +1,18 @@
 import React from 'react'
-import { Component } from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Redirect } from 'react-router-dom'
 
-const ProtectedRoute = ({ component: Component, ...rest}) => {
-    return (
-        <Route {...rest} render={ props => <Component {...rest} {...props} /> } /> 
-    )
+const ProtectedRoute = ({ component: Component, user, ...rest }) => {
+  return (
+    <Route {...rest} render={
+      props => {
+        if (user) {
+          return <Component {...rest} {...props} />
+        } else {
+          return <Redirect to='/error' />
+        }
+      }
+    } />
+  )
 }
 
 export default ProtectedRoute

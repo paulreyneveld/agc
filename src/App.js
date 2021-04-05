@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from 'react-router-dom'
 import { initializeUser, clearUser } from './reducers/loginReducer'
 import { useDispatch, useSelector } from 'react-redux'
@@ -25,6 +26,7 @@ const App = () => {
 
   const dispatch = useDispatch()
   const [user, setUser] = useState(null)
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
 
   useEffect(() => {
     const checkLoggedIn = () => {
@@ -33,6 +35,7 @@ const App = () => {
         const user = JSON.parse(loggedUserJSON)
         dispatch(initializeUser(user))
         console.log(user)
+        setIsAuthenticated(true)
         setUser(user)
       }
     }
@@ -42,6 +45,7 @@ const App = () => {
   const handleLogout = () => {
     window.localStorage.removeItem('loggedBlogappUser')
     dispatch(clearUser(null))
+    setUser(null)
   }
 
   return (
@@ -64,7 +68,11 @@ const App = () => {
           </Route>
           <Route path="/login"  render={(props) => <Login {...props} />}/>
           <Route path="/imageupload" component={ImageUpload} />
-          <ProtectedRoute exact path="/panelgallery" component={PanelGallery} />
+          {/* <ProtectedRoute exact path="/panelgallery" user={user} component={PanelGallery} /> */}
+          <Route path="/panelgallery">
+            {isAuthenticated ? <PanelGallery /> : <Error />}
+          </Route>
+          <Route path="/error" component={Error} />
           <Route path="/">
             <Home />
           </Route>

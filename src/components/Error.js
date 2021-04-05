@@ -1,8 +1,11 @@
 import React from 'react'
+import Container from 'react-bootstrap/Container'
 
 const Error = () => {
     return (
-        <h1>testing</h1>
+        <Container>
+            <h1>Unauthorized</h1>
+        </Container>
     )
 }
 
