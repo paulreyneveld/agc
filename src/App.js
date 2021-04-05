@@ -18,6 +18,7 @@ import NewBlog from './components/NewBlog'
 import PanelGallery from './components/PanelGallery'
 import ImageUpload from './components/ImageUpload'
 import NewFooter from './components/NewFooter'
+import Error from './components/Error'
 
 const App = () => {
 
@@ -42,16 +43,6 @@ const App = () => {
     dispatch(clearUser(null))
   }
 
-  console.log(user)
-
-  const privatePaths = () => {
-    if (user) {
-      return <Route exact path="/newblog" render={(props) => <NewBlog {...props} />} />
-    }
-    else {
-      return <Route path="/error"  render={(props) => <Login {...props} />}/>
-    }
-  }
   return (
     <>
     <Router>
@@ -62,7 +53,7 @@ const App = () => {
           <Route path="/blog">
             <Blog />
           </Route>
-          
+          <Route exact path="/newblog" render={(props) => <NewBlog {...props} />} />
           <Route path="/updateblog/:id"  render={(props) => <UpdateBlog {...props} />} />
           <Route path="/about">
             <About />
@@ -78,7 +69,7 @@ const App = () => {
           </Route>
         </Switch>
       <NewFooter />
-          {privatePaths()}
+          
     </Router>
     </>
   )
