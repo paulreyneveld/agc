@@ -29,7 +29,8 @@ const PanelGallery = () => {
         objectFit: 'contain',
         marginRight: '1em',
         marginBottom: '1em',
-        float: 'left'
+        float: 'left',
+        backgroundColor: 'light gray'
     }
 
     const divStyle = {
