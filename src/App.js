@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from 'react-router-dom'
 import { initializeUser, clearUser } from './reducers/loginReducer'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import Navigation from './components/Navigation'
 import Home from './components/Home'
 import Blog from './components/Blog'
@@ -22,6 +22,7 @@ import NewFooter from './components/NewFooter'
 const App = () => {
 
   const dispatch = useDispatch()
+  const [user, setUser] = useState(null)
 
   useEffect(() => {
     const checkLoggedIn = () => {
@@ -30,6 +31,7 @@ const App = () => {
         const user = JSON.parse(loggedUserJSON)
         dispatch(initializeUser(user))
         console.log(user)
+        setUser(user)
       }
     }
     checkLoggedIn()
@@ -40,6 +42,16 @@ const App = () => {
     dispatch(clearUser(null))
   }
 
+  console.log(user)
+
+  const privatePaths = () => {
+    if (user) {
+      return <Route exact path="/newblog" render={(props) => <NewBlog {...props} />} />
+    }
+    else {
+      return <Route path="/error"  render={(props) => <Login {...props} />}/>
+    }
+  }
   return (
     <>
     <Router>
@@ -50,7 +62,7 @@ const App = () => {
           <Route path="/blog">
             <Blog />
           </Route>
-          <Route exact path="/newblog" render={(props) => <NewBlog {...props} />} />
+          
           <Route path="/updateblog/:id"  render={(props) => <UpdateBlog {...props} />} />
           <Route path="/about">
             <About />
@@ -66,6 +78,7 @@ const App = () => {
           </Route>
         </Switch>
       <NewFooter />
+          {privatePaths()}
     </Router>
     </>
   )
