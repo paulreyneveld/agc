@@ -25,7 +25,7 @@ import ProtectedRoute from './components/ProtectedRoute'
 const App = () => {
 
   const dispatch = useDispatch()
-  // const [user, setUser] = useState(null)
+  const [user, setUser] = useState(null)
 
   useEffect(() => {
     const checkLoggedIn = () => {
@@ -34,6 +34,7 @@ const App = () => {
         const user = JSON.parse(loggedUserJSON)
         dispatch(initializeUser(user))
         console.log(user)
+        setUser(user)
       }
     }
     checkLoggedIn()
@@ -44,7 +45,7 @@ const App = () => {
     dispatch(clearUser(null))
   }
 
-  const user = useSelector(state => state.login.user)
+  // const user = useSelector(state => state.login.user)
 
   return (
     <>
