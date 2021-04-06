@@ -46,6 +46,7 @@ const App = () => {
     window.localStorage.removeItem('loggedBlogappUser')
     dispatch(clearUser(null))
     setUser(null)
+    setIsAuthenticated(false)
   }
 
   return (
@@ -68,7 +69,7 @@ const App = () => {
           </Route>
           <Route path="/login"  render={(props) => <Login {...props} />}/>
           <Route path="/imageupload" component={ImageUpload} />
-          <ProtectedRoute exact path="/panelgallery" component={PanelGallery} />
+          <ProtectedRoute exact path="/panelgallery" component={PanelGallery} user={user} />
           {/* <Route path="/panelgallery">
             {isAuthenticated ? <PanelGallery /> : <Error />}
           </Route> */}
