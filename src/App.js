@@ -66,9 +66,6 @@ const App = () => {
           <Route path="/login"  render={(props) => <Login {...props} />}/>
           <Route path="/imageupload" component={ImageUpload} />
           <ProtectedRoute exact path="/panelgallery" component={PanelGallery} user={user} />
-          {/* <Route path="/panelgallery">
-            {isAuthenticated ? <PanelGallery /> : <Error />}
-          </Route> */}
           <Route path="/error" component={Error} />
           <Route path="/">
             <Home />

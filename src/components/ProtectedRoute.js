@@ -5,18 +5,14 @@ import { initializeUser } from '../reducers/loginReducer'
 
 const ProtectedRoute = ({ component: Component, ...rest }) => {
 
-    const loggedIn = useSelector(state => state.login.loggedIn)
-    // console.log('user', user)
-    // console.log('rest', rest)
-    // const user = rest
-    // console.log('user', rest.user)
-    console.log(loggedIn)
-    console.log(rest.user)
+    const user = rest.user
+    // console.log(user)
+    console.log(rest)
 
     return (
     <Route {...rest} render={
         props => {
-        if (loggedIn || rest.user) {
+        if (user) {
             return <Component {...rest} {...props} />
         } else {
             return <Redirect to='/error' />
