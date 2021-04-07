@@ -45,8 +45,6 @@ const App = () => {
     dispatch(clearUser(null))
   }
 
-  // const user = useSelector(state => state.login.user)
-
   return (
     <>
     <Router>
