@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react'
+import React, { useEffect } from 'react'
 import Container from 'react-bootstrap/Container'
 import ImageGallery from 'react-image-gallery'
 import { useDispatch, useSelector } from 'react-redux'
@@ -9,8 +9,6 @@ const Gallery = () => {
 
     const dispatch = useDispatch()
     
-    const [isLoading, setIsLoading] = useState(false)
-
     const photos = useSelector(state => state.photos)
 
     const restructuredImages = photos.map(photo => { 
@@ -20,13 +18,11 @@ const Gallery = () => {
     })
 
     useEffect(() => {
-        setIsLoading(true);
         dispatch(startLoadPhotos());
     }, [dispatch])
 
     useEffect(() => {
         if (photos.length > 0) {
-        setIsLoading(false);
         }
     }, [photos])
 
