@@ -2,18 +2,16 @@ import React, { useEffect, useState } from 'react'
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Redirect
+  Route
 } from 'react-router-dom'
 import { initializeUser, clearUser } from './reducers/loginReducer'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import Navigation from './components/Navigation'
 import Home from './components/Home'
 import Blog from './components/Blog'
 import About from './components/About'
 import Gallery from './components/Gallery'
 import Login from './components/Login'
-import Footer from './components/Footer'
 import UpdateBlog from './components/UpdateBlog'
 import NewBlog from './components/NewBlog'
 import PanelGallery from './components/PanelGallery'
@@ -43,6 +41,7 @@ const App = () => {
   const handleLogout = () => {
     window.localStorage.removeItem('loggedBlogappUser')
     dispatch(clearUser(null))
+    dispatch(clearUser())
   }
 
   return (
