@@ -1,5 +1,3 @@
-// const initialState = 
-
 const reducer = (state = {}, action) => {
     switch (action.type) {
         case 'INIT_USER':
@@ -24,8 +22,6 @@ export const initializeUser = () => {
       const loggedUserJSON = window.localStorage.getItem('loggedBlogappUser')
       if (loggedUserJSON) { 
         const user = JSON.parse(loggedUserJSON)
-        // dispatch(initializeUser(user))
-        // setUser(user)
         return user
       }
     }
