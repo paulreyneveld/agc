@@ -8,7 +8,8 @@ const NewFooter  = () => {
         height: '4em',
         position: 'fixed',
         bottom: 0,
-        width: '100%'
+        width: '100%',
+        paddingTop: '1em'
     }
     
     return (
