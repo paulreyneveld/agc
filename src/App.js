@@ -42,17 +42,17 @@ const App = () => {
           <Route path="/blog">
             <Blog />
           </Route>
-          <Route exact path="/newblog" render={(props) => <NewBlog {...props} />} />
-          <Route path="/updateblog/:id"  render={(props) => <UpdateBlog {...props} />} />
           <Route path="/about">
             <About />
           </Route>
           <Route path="/gallery">
             <Gallery />
           </Route>
+          <Route exact path="/panelgallery" component={PanelGallery} />
           <Route path="/login"  render={(props) => <Login {...props} />}/>
-          <Route path="/imageupload" component={ImageUpload} />
-          <ProtectedRoute exact path="/panelgallery" component={PanelGallery} />
+          <ProtectedRoute path="/imageupload" component={ImageUpload} />
+          <ProtectedRoute exact path="/newblog" component={NewBlog} />
+          <ProtectedRoute exact path="/updateblog/:id" component={UpdateBlog} />          
           <Route path="/error" component={Error} />
           <Route path="/">
             <Home />
