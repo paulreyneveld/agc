@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import {
   BrowserRouter as Router,
   Switch,
@@ -28,7 +28,6 @@ const App = () => {
   
   const handleLogout = () => {
     window.localStorage.removeItem('loggedBlogappUser')
-    // dispatch(clearUser(null))
     dispatch(clearUser())
   }
 
