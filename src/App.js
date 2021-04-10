@@ -31,7 +31,6 @@ const App = () => {
       if (loggedUserJSON) { 
         const user = JSON.parse(loggedUserJSON)
         dispatch(initializeUser(user))
-        console.log(user)
         setUser(user)
       }
     }

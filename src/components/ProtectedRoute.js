@@ -5,14 +5,10 @@ import { initializeUser } from '../reducers/loginReducer'
 
 const ProtectedRoute = ({ component: Component, ...rest }) => {
 
-    const user = rest.user
-    // console.log(user)
-    console.log(rest)
-
     return (
     <Route {...rest} render={
         props => {
-        if (user) {
+        if (window.localStorage.getItem('loggedBlogappUser')) {
             return <Component {...rest} {...props} />
         } else {
             return <Redirect to='/error' />
