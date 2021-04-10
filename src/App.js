@@ -23,23 +23,12 @@ import ProtectedRoute from './components/ProtectedRoute'
 const App = () => {
 
   const dispatch = useDispatch()
-  const [user, setUser] = useState(null)
 
-  useEffect(() => {
-    const checkLoggedIn = () => {
-      const loggedUserJSON = window.localStorage.getItem('loggedBlogappUser')
-      if (loggedUserJSON) { 
-        const user = JSON.parse(loggedUserJSON)
-        dispatch(initializeUser(user))
-        setUser(user)
-      }
-    }
-    checkLoggedIn()
-  }, [dispatch])
+  dispatch(initializeUser())
   
   const handleLogout = () => {
     window.localStorage.removeItem('loggedBlogappUser')
-    dispatch(clearUser(null))
+    // dispatch(clearUser(null))
     dispatch(clearUser())
   }
 
@@ -63,7 +52,7 @@ const App = () => {
           </Route>
           <Route path="/login"  render={(props) => <Login {...props} />}/>
           <Route path="/imageupload" component={ImageUpload} />
-          <ProtectedRoute exact path="/panelgallery" component={PanelGallery} user={user} />
+          <ProtectedRoute exact path="/panelgallery" component={PanelGallery} />
           <Route path="/error" component={Error} />
           <Route path="/">
             <Home />
