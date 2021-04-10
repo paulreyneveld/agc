@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Route, Redirect } from 'react-router-dom'
-import { useSelector, useDispatch } from 'react-redux'
-import { initializeUser } from '../reducers/loginReducer'
+import { useSelector } from 'react-redux'
 
 const ProtectedRoute = ({ component: Component, ...rest }) => {
 
