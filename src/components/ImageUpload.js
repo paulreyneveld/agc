@@ -12,7 +12,7 @@ const ImageUpload = () => {
 
     const dispatch = useDispatch()
 
-    const onChange = (imageList, addUpdateIndex) => {
+    const onChange = (imageList) => {
         setImages(imageList)
     }
 
@@ -23,7 +23,8 @@ const ImageUpload = () => {
 
     const buttonStyle = {
         marginRight: "0.5em",
-        marginBottom: "1em"
+        marginBottom: "1em", 
+        marginTop: "0.5em"
     }
 
     return (
@@ -55,7 +56,7 @@ const ImageUpload = () => {
             <div className="upload__image-wrapper">
                 <Button
                 variant="outline-primary"
-                style={isDragging ? { color: 'red' } : undefined}
+                // style={isDragging ? { color: 'red' } : undefined}
                 onClick={onImageUpload}
                 {...dragProps}
                 style={buttonStyle}
@@ -68,8 +69,8 @@ const ImageUpload = () => {
                 <div key={index} className="image-item">
                     <img src={image['data_url']} alt="" width="100" />
                     <div className="image-item__btn-wrapper">
-                    <Button style={buttonStyle} style={{marginTop: "0.5em"}} button variant="outline-primary" onClick={() => onImageUpdate(index)}>Update</Button>
-                    <Button style={buttonStyle} style={{marginTop: "0.5em"}} variant="outline-primary" onClick={() => onImageRemove(index)}>Remove</Button>
+                    <Button style={buttonStyle} button variant="outline-primary" onClick={() => onImageUpdate(index)}>Update</Button>
+                    <Button style={buttonStyle} button variant="outline-primary" onClick={() => onImageRemove(index)}>Remove</Button>
                     </div>
                 </div>
                 ))}
