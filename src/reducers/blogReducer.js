@@ -25,7 +25,7 @@ export const initializeBlogs = (newToken) => {
       }
     return async dispatch => {
         try {
-            const blogs = await axios.get(`${BASE_API_URL}/blog`)
+            const blogs = await axios.get(`${BASE_API_URL}/blog`, config)
             dispatch({
                 type: 'GET_BLOGS',
                 data: blogs.data
