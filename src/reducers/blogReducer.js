@@ -18,7 +18,11 @@ const blogReducer = (state = [], action) => {
     }
 }
 
-export const initializeBlogs = () => {
+export const initializeBlogs = (newToken) => {
+    const token = `bearer ${newToken}`
+    const config = {
+        headers: { Authorization: token },
+      }
     return async dispatch => {
         try {
             const blogs = await axios.get(`${BASE_API_URL}/blog`)

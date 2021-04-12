@@ -10,12 +10,15 @@ const Blog = (props) => {
 
     const dispatch = useDispatch()
 
-    useEffect(() => {
-        dispatch(initializeBlogs())
-      }, [dispatch] )
-
     const blogs = useSelector(state => state.blog)
     const user = useSelector(state => state.login.user)
+    console.log(user.token)
+
+    useEffect(() => {
+        dispatch(initializeBlogs(user.token))
+      }, [dispatch] )
+
+
 
     const adminFeatures = (blog) => {
         if (user) {
