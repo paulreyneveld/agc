@@ -4,7 +4,6 @@ import { BASE_API_URL } from '../utils/constants'
 const blogReducer = (state = [], action) => {
     switch(action.type) {
         case "GET_BLOGS": 
-            // return action.data.data
             return action.data
         case "NEW_BLOG":
             return state.concat(action.data)

@@ -12,7 +12,6 @@ const Blog = (props) => {
 
     const blogs = useSelector(state => state.blog)
     const user = useSelector(state => state.login.user)
-    console.log(user.token)
 
     useEffect(() => {
         dispatch(initializeBlogs(user.token))
