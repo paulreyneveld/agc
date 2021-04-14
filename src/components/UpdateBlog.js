@@ -14,6 +14,8 @@ const UpdateBlog = (props) => {
     const blogs = useSelector(state => state.blog)
     const blog = blogs.filter(blog => blog.id === id)
 
+    const user = useSelector(state => state.login.user)
+
     const [title, setTitle] = useState(blog[0].title)
     const [content, setContent] = useState(blog[0].content)
     const [notification, setNotification] = useState(false)
@@ -25,7 +27,7 @@ const UpdateBlog = (props) => {
             title, 
             content
         }
-        dispatch(editBlog(id, updatedBlog))   
+        dispatch(editBlog(id, updatedBlog, user.token))   
         setTitle('')
         setContent('')
         setNotification(true)

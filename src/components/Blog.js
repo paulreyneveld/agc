@@ -31,7 +31,7 @@ const Blog = (props) => {
     }
 
     const removeBlog = (id) => {
-        dispatch(deleteBlog(id))
+        dispatch(deleteBlog(id, user.token))
     }
 
     const buttonStyle = {
@@ -46,6 +46,7 @@ const Blog = (props) => {
         padding: "1em",
         marginBottom: "1em"
     }
+    
     return (
         <Container>
             <h1>Blog</h1>
