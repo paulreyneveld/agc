@@ -18,13 +18,9 @@ const blogReducer = (state = [], action) => {
 }
 
 export const initializeBlogs = (newToken) => {
-    const token = `bearer ${newToken}`
-    const config = {
-        headers: { Authorization: token },
-      }
     return async dispatch => {
         try {
-            const blogs = await axios.get(`${BASE_API_URL}/blog`, config)
+            const blogs = await axios.get(`${BASE_API_URL}/blog`)
             dispatch({
                 type: 'GET_BLOGS',
                 data: blogs.data
@@ -36,10 +32,14 @@ export const initializeBlogs = (newToken) => {
     }
 }
 
-export const addNewBlog = (newBlog) => {
+export const addNewBlog = (newBlog, newToken) => {
+    const token = `bearer ${newToken}`
+    const config = {
+        headers: { Authorization: token },
+      }
     return async dispatch => {
         try {
-            const blog = await axios.post(`${BASE_API_URL}/blog`, newBlog)
+            const blog = await axios.post(`${BASE_API_URL}/blog`, newBlog, config)
             dispatch({
                 type: 'NEW_BLOG',
                 data: blog
@@ -51,10 +51,14 @@ export const addNewBlog = (newBlog) => {
     }
 }
 
-export const deleteBlog = (id) => {
+export const deleteBlog = (id, newToken) => {
+    const token = `bearer ${newToken}`
+    const config = {
+        headers: { Authorization: token },
+      }
     return async dispatch => {
         try {
-        await axios.delete(`${BASE_API_URL}/blog/${id}`)
+        await axios.delete(`${BASE_API_URL}/blog/${id}`, config)
         dispatch({
             type: 'DELETE_BLOG',
             data: id
@@ -67,10 +71,14 @@ export const deleteBlog = (id) => {
 }
 
 // edit blog
-export const editBlog = (id, newBlog) => {
+export const editBlog = (id, newBlog, newToken) => {
+    const token = `bearer ${newToken}`
+    const config = {
+        headers: { Authorization: token },
+      }
     return async dispatch => {
         try {
-            await axios.put(`${BASE_API_URL}/blog/${id}`, newBlog)
+            await axios.put(`${BASE_API_URL}/blog/${id}`, newBlog, config)
             newBlog.id = id
             dispatch({
                 type: 'UPDATE_BLOG',
