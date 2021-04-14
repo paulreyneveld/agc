@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { addNewBlog } from '../reducers/blogReducer'
 import Container from 'react-bootstrap/Container'
 import Form from 'react-bootstrap/Form'
@@ -13,13 +13,15 @@ const NewBlog = (props) => {
     const [content, setContent] = useState(null)
     const [notification, setNotification] = useState(false)
 
+    const user = useSelector(state => state.login.user)
+
     const createNewBlog = (event) => {
         event.preventDefault()
         const newBlog = {
             title,
             content
         }
-        dispatch(addNewBlog(newBlog))
+        dispatch(addNewBlog(newBlog, user.token))
         setTitle('')
         setContent('')
         setNotification(true)
@@ -27,7 +29,6 @@ const NewBlog = (props) => {
             setNotification(false)
             props.history.push('/blog')
         }, 1500)
-        // props.history.push('/blog')
     }
 
     const confirmation = () => {

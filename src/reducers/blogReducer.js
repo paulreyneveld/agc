@@ -17,7 +17,7 @@ const blogReducer = (state = [], action) => {
     }
 }
 
-export const initializeBlogs = (newToken) => {
+export const initializeBlogs = () => {
     return async dispatch => {
         try {
             const blogs = await axios.get(`${BASE_API_URL}/blog`)
