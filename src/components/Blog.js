@@ -14,7 +14,12 @@ const Blog = (props) => {
     const user = useSelector(state => state.login.user)
 
     useEffect(() => {
+        if (user.token) {
         dispatch(initializeBlogs(user.token))
+        } 
+        else {
+            dispatch(initializeBlogs(null))
+        }
       }, [dispatch] )
 
 
