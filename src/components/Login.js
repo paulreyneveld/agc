@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { initializeUser } from '../reducers/loginReducer'
-import loginService from '../services/login'
+import { login as loginService }  from '../services/login'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
