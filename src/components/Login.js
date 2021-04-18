@@ -17,7 +17,7 @@ const Login = (props) => {
       event.preventDefault()
 
       try {
-        const user = await loginService.login({
+        const user = await loginService({
           username, password,
         })
 
