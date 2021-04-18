@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import Container from 'react-bootstrap/Container'
-import { startLoadImages } from '../reducers/imageReducer'
+import { startLoadImages, deleteImage } from '../reducers/imageReducer'
 import Image from 'react-bootstrap/Image'
+import Button from 'react-bootstrap/Button'
 
 const PanelGallery = () => {
 
@@ -45,7 +46,11 @@ const PanelGallery = () => {
                 <div>Loading. . .</div>
             )
             : images.map( image => {
-                return <Image style={imageStyle} key={image._id} src={`http://localhost:3001/api/images/${image._id}`} />
+                return (
+                    <>
+                    <Image style={imageStyle} key={image._id} src={`http://localhost:3001/api/images/${image._id}`} />
+                    </>
+                    )
             })}
         </div>
         </Container>

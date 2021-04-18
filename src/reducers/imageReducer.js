@@ -51,7 +51,7 @@ export const deleteImage = (id) => {
       console.log(error)
     }
   }
- }
+}
 
 export default imageReducer
 
