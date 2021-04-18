@@ -22,7 +22,7 @@ export const uploadImages = (images) => {
       headers: {
         'Content-Type': 'multipart/form-data'
       }
-    });
+    })
   }
 }
 
@@ -34,13 +34,24 @@ export const startLoadImages = () => {
     } catch (error) {
       console.log(error)
     }
-  };
-};
+  }
+}
   
 export const loadImages = (images) => ({
   type: 'LOAD_IMAGES',
   images
-});
+})
+
+export const deleteImage = (id) => {
+  return async (dispatch) => {
+    try {
+      await axios.delete(`${BASE_API_URL}/images/${id}`)
+    }
+    catch (error) {
+      console.log(error)
+    }
+  }
+ }
 
 export default imageReducer
 
