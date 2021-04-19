@@ -53,7 +53,7 @@ const App = () => {
           <ProtectedRoute path="/imageupload" component={ImageUpload} />
           <ProtectedRoute exact path="/newblog" component={NewBlog} />
           <ProtectedRoute exact path="/updateblog/:id" component={UpdateBlog} />
-          <ProtectedRoute exact path="/managegallery" component={ManageImages} /> 
+          <ProtectedRoute exact path="/manageimages" component={ManageImages} /> 
           <Route path="/error" component={Error} />
           <Route path="/">
             <Home />

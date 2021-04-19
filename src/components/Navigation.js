@@ -28,6 +28,7 @@ const Navigation = ({ handleLogout }) => {
                 <>
                 <Nav.Link as={Link} to="/newblog">New Blog</Nav.Link>
                 <Nav.Link as={Link} to="/imageupload">Image Upload</Nav.Link>
+                <Nav.Link as={Link} to="/manageimages">Manage Images</Nav.Link>
                 </>
             )
         }
