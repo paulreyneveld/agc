@@ -6,8 +6,6 @@ const imageReducer = (state = [], action) => {
     case 'LOAD_IMAGES':
       return action.images
     case 'DELETE_IMAGE':
-      console.log(action.id)
-      console.log('hello world')
       return state.filter(item => item._id !== action.id)
     default:
       return state
@@ -50,7 +48,6 @@ export const deleteImage = (id) => {
   return async (dispatch) => {
     try {
       // await axios.delete(`${BASE_API_URL}/images/${id}`)
-      console.log(id)
       dispatch({
         type: 'DELETE_IMAGE',
         id
