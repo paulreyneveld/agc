@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Container from 'react-bootstrap/Container'
-import { startLoadImages } from '../reducers/imageReducer'
+import { startLoadImages, deleteImage } from '../reducers/imageReducer'
 import Image from 'react-bootstrap/Image'
 import Button from 'react-bootstrap/Button'
 
@@ -33,6 +33,10 @@ const ManageImages = () => {
         // float: 'left',
         // backgroundColor: 'light gray'
     }
+
+    const removeImage = (id) => {
+        dispatch(deleteImage(id))
+    }
     
     return (
         <Container>
@@ -43,8 +47,8 @@ const ManageImages = () => {
             : images.map( image => {
                 return (
                     <>
-                    <Button>Delete</Button>
                     <Image style={imageStyle} key={image._id} src={`http://localhost:3001/api/images/${image._id}`} />
+                    <Button onClick={() => removeImage(image._id)}>Delete</Button>
                     </>
                     )
             })}
