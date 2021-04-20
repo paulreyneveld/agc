@@ -47,7 +47,7 @@ export const loadImages = (images) => ({
 export const deleteImage = (id) => {
   return async (dispatch) => {
     try {
-      // await axios.delete(`${BASE_API_URL}/images/${id}`)
+      await axios.delete(`${BASE_API_URL}/images/${id}`)
       dispatch({
         type: 'DELETE_IMAGE',
         id

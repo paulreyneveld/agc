@@ -14,7 +14,6 @@ const NewBlog = (props) => {
     const [notification, setNotification] = useState(false)
 
     const user = useSelector(state => state.login.user)
-    console.log(user.token)
     const createNewBlog = (event) => {
         event.preventDefault()
         const newBlog = {
