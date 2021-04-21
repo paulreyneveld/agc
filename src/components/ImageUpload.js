@@ -8,6 +8,8 @@ import { useDispatch } from 'react-redux'
 
 const ImageUpload = () => {
     const [images, setImages] = useState([])
+    const [notification, setNotification] = useState(false)
+
     const maxNumber = 10;    
 
     const dispatch = useDispatch()
@@ -19,6 +21,20 @@ const ImageUpload = () => {
     const handleFormSubmit = (event) => {
         event.preventDefault()
         dispatch(uploadImages(images))
+        setNotification(true)
+        setTimeout(() => {
+            setNotification(false)
+            // props.history.push('/')
+        }, 
+        2000)
+    }
+
+    const confirmation = () => {
+        if (notification) {
+            return (
+                <p>Updating. . .</p>
+            )
+        }
     }
 
     const buttonStyle = {
@@ -85,6 +101,7 @@ const ImageUpload = () => {
           Upload
         </Button>
         </Form>
+        {confirmation()}
         </Container>
         </>
     )
