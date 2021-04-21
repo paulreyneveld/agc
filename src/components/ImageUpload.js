@@ -6,7 +6,7 @@ import Form from 'react-bootstrap/Form'
 import { uploadImages } from '../reducers/imageReducer'
 import { useDispatch } from 'react-redux'
 
-const ImageUpload = () => {
+const ImageUpload = (props) => {
     const [images, setImages] = useState([])
     const [notification, setNotification] = useState(false)
 
@@ -24,7 +24,7 @@ const ImageUpload = () => {
         setNotification(true)
         setTimeout(() => {
             setNotification(false)
-            // props.history.push('/')
+            props.history.push('/')
         }, 
         2000)
     }
