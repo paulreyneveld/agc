@@ -36,7 +36,7 @@ export const addNewBlog = (newBlog, newToken) => {
     const token = `bearer ${newToken}`
     const config = {
         headers: { Authorization: token },
-      }
+    }
     return async dispatch => {
         try {
             const blog = await axios.post(`${BASE_API_URL}/blog`, newBlog, config)
@@ -55,7 +55,7 @@ export const deleteBlog = (id, newToken) => {
     const token = `bearer ${newToken}`
     const config = {
         headers: { Authorization: token },
-      }
+    }
     return async dispatch => {
         try {
         await axios.delete(`${BASE_API_URL}/blog/${id}`, config)
@@ -75,7 +75,7 @@ export const editBlog = (id, newBlog, newToken) => {
     const token = `bearer ${newToken}`
     const config = {
         headers: { Authorization: token },
-      }
+    }
     return async dispatch => {
         try {
             await axios.put(`${BASE_API_URL}/blog/${id}`, newBlog, config)

@@ -11,6 +11,7 @@ const ManageImages = () => {
     const [loading, setLoading] = useState(false)
 
     const images = useSelector(state => state.images)
+    const user = useSelector(state => state.login.user)
     
     useEffect(() => {
         setLoading(true)
@@ -35,7 +36,7 @@ const ManageImages = () => {
     }
 
     const removeImage = (id) => {
-        dispatch(deleteImage(id))
+        dispatch(deleteImage(id, user.token))
     }
     
     return (
