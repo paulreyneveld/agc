@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import Container from 'react-bootstrap/Container'
-import { startLoadImages, deleteImage } from '../reducers/imageReducer'
+import { startLoadImages } from '../reducers/imageReducer'
 import Image from 'react-bootstrap/Image'
-import Button from 'react-bootstrap/Button'
 
 const PanelGallery = () => {
 
