@@ -2,29 +2,29 @@ import React, { useEffect } from 'react'
 import Container from 'react-bootstrap/Container'
 import ImageGallery from 'react-image-gallery'
 import { useDispatch, useSelector } from 'react-redux'
-import { startLoadPhotos } from '../reducers/photosReducer'
+import { startLoadImages } from '../reducers/imageReducer'
 import { BASE_API_URL } from '../utils/constants'
 
 const Gallery = () => {
 
     const dispatch = useDispatch()
     
-    const photos = useSelector(state => state.photos)
+    const images = useSelector(state => state.images)
 
-    const restructuredImages = photos.map(photo => { 
+    const restructuredImages = images.map(image => { 
         return {
-            original: `${BASE_API_URL}/photos/${photo._id}`
+            original: `${BASE_API_URL}/images/${image._id}`
         }
     })
 
     useEffect(() => {
-        dispatch(startLoadPhotos());
+        dispatch(startLoadImages());
     }, [dispatch])
 
     useEffect(() => {
-        if (photos.length > 0) {
+        if (images.length > 0) {
         }
-    }, [photos])
+    }, [images])
 
     return (
         <Container>

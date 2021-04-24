@@ -7,7 +7,6 @@ import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import loginReducer from './reducers/loginReducer'
-import photosReducer from './reducers/photosReducer'
 import errorsReducer from './reducers/errorReducer';
 import blogReducer from './reducers/blogReducer';
 import imageReducer from './reducers/imageReducer';
@@ -15,7 +14,6 @@ import imageReducer from './reducers/imageReducer';
 const store = createStore(
   combineReducers({
     login: loginReducer,
-    photos: photosReducer,
     errors: errorsReducer,
     blog: blogReducer, 
     images: imageReducer
