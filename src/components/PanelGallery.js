@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import Container from 'react-bootstrap/Container'
 import { startLoadImages } from '../reducers/imageReducer'
 import Image from 'react-bootstrap/Image'
+import ImageGallery from 'react-image-gallery'
+import { BASE_API_URL } from '../utils/constants'
 
 const PanelGallery = () => {
 
@@ -38,6 +40,25 @@ const PanelGallery = () => {
         marginRight: 'auto'
     }
 
+    const restructuredImages = images.map(image => { 
+        return {
+            original: `${BASE_API_URL}/images/${image._id}`
+        }
+    })
+
+    const displayGallery = (id) => {
+        console.log(id)
+        return (
+            <Container>
+            <ImageGallery 
+                items={restructuredImages} 
+                showFullscreenButton={false}
+                showPlayButton={false}
+            />
+            </Container>
+        )
+    }
+
     return (
         <Container>
         <div style={divStyle}>
@@ -47,7 +68,7 @@ const PanelGallery = () => {
             : images.map( image => {
                 return (
                     <>
-                    <Image style={imageStyle} key={image._id} src={`http://localhost:3001/api/images/${image._id}`} />
+                    <Image onClick={() => displayGallery(image._id)} style={imageStyle} key={image._id} src={`http://localhost:3001/api/images/${image._id}`} />
                     </>
                     )
             })}
