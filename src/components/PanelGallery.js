@@ -11,6 +11,7 @@ const PanelGallery = () => {
     const dispatch = useDispatch() 
 
     const [loading, setLoading] = useState(false)
+    const [view, setView] = useState(false)
 
     const images = useSelector(state => state.images)
     
@@ -46,10 +47,11 @@ const PanelGallery = () => {
         }
     })
 
-    const displayGallery = (id) => {
-        console.log(id)
+    const modalDisplay = (id) => {
+        if (view) {
         return (
             <Container>
+            <p>hello</p>
             <ImageGallery 
                 items={restructuredImages} 
                 showFullscreenButton={false}
@@ -57,22 +59,34 @@ const PanelGallery = () => {
             />
             </Container>
         )
+        }
+        return (
+            <Container>
+            <div style={divStyle}>
+                {loading ? (
+                    <div>Loading. . .</div>
+                )
+                : images.map( image => {
+                    return (
+                        <span key={image._id}>
+                        <Image onClick={() => {
+                            setView(true)
+                            modalDisplay(image._id)} 
+                        }
+                        style={imageStyle} 
+                        key={image._id} 
+                        src={`http://localhost:3001/api/images/${image._id}`} />
+                        </span>
+                        )
+                })}
+            </div>
+            </Container>
+        )
     }
 
     return (
         <Container>
-        <div style={divStyle}>
-            {loading ? (
-                <div>Loading. . .</div>
-            )
-            : images.map( image => {
-                return (
-                    <>
-                    <Image onClick={() => displayGallery(image._id)} style={imageStyle} key={image._id} src={`http://localhost:3001/api/images/${image._id}`} />
-                    </>
-                    )
-            })}
-        </div>
+        {modalDisplay()}
         </Container>
     )
 }
