@@ -50,14 +50,11 @@ const PanelGallery = () => {
     const modalDisplay = (id) => {
         if (view) {
         return (
-            <Container>
-            <p>hello</p>
             <ImageGallery 
                 items={restructuredImages} 
                 showFullscreenButton={false}
                 showPlayButton={false}
             />
-            </Container>
         )
         }
         return (
