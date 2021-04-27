@@ -52,7 +52,7 @@ const PanelGallery = () => {
         if (view) {
         return (
             <>
-            <Button>Exit</Button>
+            <Button onClick={() => setView(false)}>Exit</Button>
             <ImageGallery 
                 items={restructuredImages} 
             />
