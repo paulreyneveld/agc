@@ -12,6 +12,7 @@ const Gallery = () => {
     const dispatch = useDispatch() 
 
     const [loading, setLoading] = useState(false)
+    const [imageId, setImageId] = useState(null)
     const [view, setView] = useState(false)
 
     const images = useSelector(state => state.images)
@@ -44,20 +45,38 @@ const Gallery = () => {
 
     const restructuredImages = images.map(image => { 
         return {
-            original: `${BASE_API_URL}/images/${image._id}`
+            original: `${BASE_API_URL}/images/${image._id}`,
+            id: image._id
         }
     })
 
-    const modalDisplay = (id) => {
+    const modalDisplay = () => {
+        // Find the index via the ID
+        let index = 0
         if (view) {
-        return (
-            <>
-            <Button onClick={() => setView(false)}>Exit</Button>
-            <ImageGallery 
-                items={restructuredImages} 
-            />
-            </>
-        )
+            for (let i = 0; i < restructuredImages.length; i++) {
+                if (restructuredImages[i].id === imageId) {
+                    index = i
+                    break
+                }
+            }
+            console.log(index)
+            return (
+                <>
+                <Button 
+                    onClick={() => {
+                            setView(false)
+                            setImageId(null)
+                        }
+                    }
+                >Exit
+                </Button>
+                <ImageGallery 
+                    items={restructuredImages} 
+                    startIndex={index}
+                />
+                </>
+            )
         }
         return (
             <Container>
@@ -70,7 +89,8 @@ const Gallery = () => {
                         <span key={image._id}>
                         <Image onClick={() => {
                             setView(true)
-                            modalDisplay(image._id)} 
+                            setImageId(image._id)
+                            } 
                         }
                         style={imageStyle} 
                         key={image._id} 
