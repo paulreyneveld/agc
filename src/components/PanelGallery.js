@@ -5,6 +5,7 @@ import { startLoadImages } from '../reducers/imageReducer'
 import Image from 'react-bootstrap/Image'
 import ImageGallery from 'react-image-gallery'
 import { BASE_API_URL } from '../utils/constants'
+import Button from 'react-bootstrap/Button'
 
 const PanelGallery = () => {
 
@@ -50,11 +51,12 @@ const PanelGallery = () => {
     const modalDisplay = (id) => {
         if (view) {
         return (
+            <>
+            <Button>Exit</Button>
             <ImageGallery 
                 items={restructuredImages} 
-                showFullscreenButton={false}
-                showPlayButton={false}
             />
+            </>
         )
         }
         return (
