@@ -7,7 +7,7 @@ import ImageGallery from 'react-image-gallery'
 import { BASE_API_URL } from '../utils/constants'
 import Button from 'react-bootstrap/Button'
 
-const PanelGallery = () => {
+const Gallery = () => {
 
     const dispatch = useDispatch() 
 
@@ -90,4 +90,4 @@ const PanelGallery = () => {
     )
 }
 
-export default PanelGallery
+export default Gallery
