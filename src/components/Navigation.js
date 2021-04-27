@@ -45,7 +45,6 @@ const Navigation = ({ handleLogout }) => {
             <Nav.Link as={Link} to="/blog">Blog</Nav.Link>
             <Nav.Link as={Link} to="/about">About</Nav.Link>
             <Nav.Link as={Link} to="/gallery">Gallery</Nav.Link>
-            <Nav.Link as={Link} to="/panelgallery">Panel Gallery</Nav.Link>
             {authMenuView()}
             </Nav>
         </Navbar.Collapse>

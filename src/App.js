@@ -14,7 +14,6 @@ import Gallery from './components/Gallery'
 import Login from './components/Login'
 import UpdateBlog from './components/UpdateBlog'
 import NewBlog from './components/NewBlog'
-import PanelGallery from './components/PanelGallery'
 import ManageImages from './components/ManageImages'
 import ImageUpload from './components/ImageUpload'
 import NewFooter from './components/NewFooter'
@@ -48,7 +47,6 @@ const App = () => {
           <Route path="/gallery">
             <Gallery />
           </Route>
-          <Route exact path="/panelgallery" component={PanelGallery} />
           <Route path="/login"  render={(props) => <Login {...props} />}/>
           <ProtectedRoute path="/imageupload" component={ImageUpload} />
           <ProtectedRoute exact path="/newblog" component={NewBlog} />
