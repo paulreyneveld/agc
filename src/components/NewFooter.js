@@ -16,7 +16,7 @@ const NewFooter  = () => {
         <footer>
         <div style={style}>
             <Container>
-            Copyright Alien Girl Cult 2021 <br />
+            Copyright Alien Gvrl Cvlt 2021 <br />
             </Container>
         </div>
         </footer>
