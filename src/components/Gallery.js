@@ -69,7 +69,7 @@ const Gallery = () => {
                             setImageId(null)
                         }
                     }
-                >Exit
+                >Return to Gallery
                 </Button>
                 <ImageGallery 
                     items={restructuredImages} 
