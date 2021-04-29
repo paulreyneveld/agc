@@ -35,7 +35,8 @@ const Gallery = () => {
         marginRight: '1em',
         marginBottom: '1em',
         float: 'left',
-        backgroundColor: 'light gray'
+        backgroundColor: 'light gray',
+        cursor: 'pointer'
     }
 
     const divStyle = {
